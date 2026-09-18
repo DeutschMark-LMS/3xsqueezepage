@@ -129,66 +129,90 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
         }
     </style>
 </head>
-<body class="font-sans text-slate-900 antialiased min-h-screen flex items-center justify-center p-4">
+<body class="font-sans text-slate-900 antialiased min-h-screen">
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VCFH2J2"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
  
-    <div class="w-full max-w-3xl bg-white rounded-2xl shadow-[0_25px_50px_-12px_rgba(107,33,168,0.2)] overflow-hidden border border-slate-200 relative z-10">
+    <div class="min-h-screen bg-white relative z-10">
         
         <!-- Pre-head: Deep Black background for premium authority, Gold text for attention -->
         <div class="bg-slate-900 text-center py-3 px-4 shadow-sm relative z-20 border-b-4 border-dmPurple">
             <span class="text-dmGold font-extrabold tracking-widest text-sm uppercase">🚨 Attention Digital Product Creators:</span>
         </div>
 
-        <div class="p-6 md:p-12 text-center">
+        <div class="w-full max-w-5xl mx-auto px-6 py-10 md:px-12 md:py-16 text-center">
             
             <!-- Headline: Massive financial numbers in Brand Purple for Ad Scent -->
             <h1 class="text-3xl md:text-5xl lg:text-[54px] font-black text-slate-900 leading-[1.1] mb-6 tracking-tight">
                 How To Turn Every ₦100,000 In Ad Spend Into <span class="text-dmPurple">₦300,000 </span>
             </h1>
             
-            <!-- Tagline: Gold highlighter effect -->
-            <p class="text-lg md:text-xl text-slate-600 font-medium max-w-2xl mx-auto mb-10 leading-relaxed">
-                Free training reveals the <strong class="text-slate-900 highlight-gold">copy-paste 3X System</strong> to scale your digital product sales on your next campaign—<i class="opacity-80">without gambling your ad budget, even if you've failed at ads before.</i>
+            <!-- Qualification seed -->
+            <p class="text-base md:text-lg text-slate-600 font-medium max-w-2xl mx-auto mb-10 leading-relaxed">
+                Answer <strong class="text-slate-900">3 quick questions in under a minute</strong> to see if this training is right for you. If you are a fit, you will unlock the free training that helps you achieve the <strong class="text-dmPurple">3x return</strong> on ad spend consistently.
             </p>
 
             <!-- Dynamic Action Box -->
             <div class="bg-slate-50 border-2 border-slate-200 rounded-xl p-6 md:p-8 max-w-md mx-auto relative shadow-inner transition-all duration-300" id="actionContainer">
+
+                <div id="questionProgress" class="mb-8 text-left">
+                    <div class="flex items-center justify-between mb-2 text-xs font-bold uppercase tracking-wide text-slate-500">
+                        <span>Progress</span>
+                        <span>Question <span id="progressNumber">0</span> of 3</span>
+                    </div>
+                    <div class="h-1.5 bg-slate-200 rounded-full overflow-hidden">
+                        <div id="progressBar" class="h-full bg-dmPurple rounded-full transition-all duration-500" style="width: 0%"></div>
+                    </div>
+                </div>
                 
                 <!-- Step 1: The Micro-Commitment Question (Q1) -->
                 <div id="qualifierStep">
-                    <h3 class="font-bold text-xl text-slate-800 mb-2">Quick Question:</h3>
-                    <p class="text-sm text-slate-500 mb-6 font-medium">Do you currently have an existing digital product that you are trying to sell?</p>
+                    <p class="text-lg md:text-xl text-slate-800 mb-6 font-bold leading-snug">Do you currently have an existing digital product that you are trying to sell?</p>
                     
                     <div class="flex flex-col gap-3">
-                        <button onclick="revealStep2()" class="w-full bg-dmPurple hover:bg-purple-900 text-white font-bold py-4 px-6 rounded-lg shadow-md transform transition hover:-translate-y-1 text-lg">
+                        <button onclick="revealStep2()" class="w-full bg-dmPurple hover:bg-purple-900 text-white font-bold py-3 px-5 rounded-lg shadow-md transform transition hover:-translate-y-1 text-sm">
                             Yes, I have a digital product
                         </button>
-                        <button onclick="revealBeginnerPath()" class="w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-6 rounded-lg transition text-sm">
+                        <button onclick="revealBeginnerPath()" class="w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-5 rounded-lg transition text-sm">
                             No, I am just starting out
                         </button>
                     </div>
                 </div>
 
-                <!-- Step 2: Budget Qualification Question (Q2) -->
-                <div id="qualifierStep2" class="hidden opacity-0 transition-opacity duration-500">
-                    <h3 class="font-bold text-xl text-slate-800 mb-2">Quick Question:</h3>
-                    <p class="text-sm text-slate-500 mb-6 font-medium">Are you prepared to invest at least ₦100,000 in ads for your next campaign?</p>
+                <!-- Step 2: Meta Ads Experience Question (Q2) -->
+                <div id="qualifierStepAds" class="hidden opacity-0 transition-opacity duration-500">
+                    <h3 class="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3">Question 2</h3>
+                    <p class="text-lg md:text-xl text-slate-800 mb-6 font-bold leading-snug">Have you ever run Meta ads, got leads but made no or low sales for your digital product?</p>
                     
                     <div class="flex flex-col gap-3">
-                        <button onclick="revealForm()" class="w-full bg-dmPurple hover:bg-purple-900 text-white font-bold py-4 px-6 rounded-lg shadow-md transform transition hover:-translate-y-1 text-lg">
-                            Yes, I am prepared to invest
+                        <button onclick="revealStep3()" class="w-full bg-dmPurple hover:bg-purple-900 text-white font-bold py-3 px-5 rounded-lg shadow-md transform transition hover:-translate-y-1 text-sm">
+                            Yes, that has happened to me
                         </button>
-                        <button onclick="revealBudgetPath()" class="w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-6 rounded-lg transition text-sm">
+                        <button onclick="revealNoAdsPath()" class="w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-5 rounded-lg transition text-sm">
+                            No, not yet
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Budget Qualification Question (Q3) -->
+                <div id="qualifierStep2" class="hidden opacity-0 transition-opacity duration-500">
+                    <h3 class="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3">Question 3</h3>
+                    <p class="text-lg md:text-xl text-slate-800 mb-6 font-bold leading-snug">Are you prepared to invest at least ₦100,000 in ads for your next campaign after you have learnt this 3x system?</p>
+                    
+                    <div class="flex flex-col gap-3">
+                        <button onclick="revealForm()" class="w-full bg-dmPurple hover:bg-purple-900 text-white font-bold py-3 px-5 rounded-lg shadow-md transform transition hover:-translate-y-1 text-sm">
+                            Yes, I am prepared
+                        </button>
+                        <button onclick="revealBudgetPath()" class="w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-5 rounded-lg transition text-sm">
                             No, I am not ready yet
                         </button>
                     </div>
                 </div>
 
-                <!-- Step 3: The Form (Hidden by default) -->
+                <!-- Step 4: The Form (Hidden by default) -->
                 <div id="formStep" class="hidden opacity-0 transition-opacity duration-500">
                     <h3 class="font-bold text-xl text-slate-800 mb-2">Where should we send your invite?</h3>
                     <p class="text-sm text-slate-500 mb-4 font-medium">Drop your best email below and I'll instantly hand you the private WhatsApp link.</p>
@@ -203,7 +227,7 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                     </div>
                 </div>
 
-                <!-- Step 4: Beginner Path Message (Hidden by default) -->
+                <!-- Step 5: Beginner Path Message (Hidden by default) -->
                 <div id="beginnerStep" class="hidden opacity-0 transition-opacity duration-500 text-center">
                     <div class="w-12 h-12 bg-amber-100 text-dmGold rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -218,7 +242,22 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                     </a>
                 </div>
 
-                <!-- Step 5: Budget Bridge Message (Hidden by default) -->
+                <!-- Step 6: Ads Preparation Message (Hidden by default) -->
+                <div id="noAdsStep" class="hidden opacity-0 transition-opacity duration-500 text-center">
+                    <div class="w-12 h-12 bg-amber-100 text-dmGold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-xl text-slate-800 mb-2">Build Your Foundation Before You Spend On Ads</h3>
+                    <p class="text-sm text-slate-600 mb-6 font-medium leading-relaxed">
+                        The 3X system is built for product owners who have already tested Meta ads. Before you put money behind a campaign, use these free lessons to learn how to position and sell your digital product so your first ad spend has a real chance of converting.
+                    </p>
+                    
+                    <a href="https://youtube.com/playlist?list=PLQWt7BuTENb1ThXC122za1Ae6pOmklyLu&si=NzOpr_OR2V35qWGV" class="w-full inline-block bg-dmGold hover:bg-amber-600 text-white font-bold py-4 px-6 rounded-lg shadow-md transform transition hover:-translate-y-1 text-lg">
+                        Watch The Free Lessons First
+                    </a>
+                </div>
+
+                <!-- Step 7: Budget Bridge Message (Hidden by default) -->
                 <div id="budgetStep" class="hidden opacity-0 transition-opacity duration-500 text-center">
                     <div class="w-12 h-12 bg-amber-100 text-dmGold rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -236,7 +275,7 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
             </div>
 
             <!-- Scarcity driver pushed to the bottom so it doesn't distract from the form -->
-            <div class="mt-8 inline-block bg-red-50 text-red-700 px-4 py-2 rounded-lg text-sm font-bold border border-red-100">
+            <div id="scarcityNotice" class="hidden mt-8 inline-block bg-red-50 text-red-700 px-4 py-2 rounded-lg text-sm font-bold border border-red-100 opacity-0 transition-opacity duration-500">
                 ⚠️ Notice: Once the training group gets full, access will be locked.
             </div>
 
@@ -255,32 +294,68 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
 
     <!-- Interactive Logic & Conversion Tracking Script -->
     <script>
+        function updateQuestionProgress(answeredQuestions) {
+            document.getElementById('progressNumber').textContent = answeredQuestions;
+            document.getElementById('progressBar').style.width = `${answeredQuestions / 3 * 100}%`;
+        }
+
         // Logic for the Micro-Commitment step
         function revealStep2() {
+            updateQuestionProgress(1);
             document.getElementById('qualifierStep').style.display = 'none';
+            const qualifierStepAds = document.getElementById('qualifierStepAds');
+            qualifierStepAds.classList.remove('hidden');
+            
+            // Slight delay to allow display:block to apply before animating opacity
+            setTimeout(() => {
+                qualifierStepAds.classList.remove('opacity-0');
+                qualifierStepAds.classList.add('opacity-100');
+            }, 50);
+        }
+
+        function revealStep3() {
+            updateQuestionProgress(2);
+            document.getElementById('qualifierStepAds').style.display = 'none';
             const qualifierStep2 = document.getElementById('qualifierStep2');
             qualifierStep2.classList.remove('hidden');
             
-            // Slight delay to allow display:block to apply before animating opacity
             setTimeout(() => {
                 qualifierStep2.classList.remove('opacity-0');
                 qualifierStep2.classList.add('opacity-100');
             }, 50);
         }
 
+        function revealNoAdsPath() {
+            updateQuestionProgress(2);
+            document.getElementById('qualifierStepAds').style.display = 'none';
+            const noAdsStep = document.getElementById('noAdsStep');
+            noAdsStep.classList.remove('hidden');
+            
+            setTimeout(() => {
+                noAdsStep.classList.remove('opacity-0');
+                noAdsStep.classList.add('opacity-100');
+            }, 50);
+        }
+
         function revealForm() {
+            updateQuestionProgress(3);
             document.getElementById('qualifierStep2').style.display = 'none';
             const formStep = document.getElementById('formStep');
+            const scarcityNotice = document.getElementById('scarcityNotice');
             formStep.classList.remove('hidden');
+            scarcityNotice.classList.remove('hidden');
             
             // Slight delay to allow display:block to apply before animating opacity
             setTimeout(() => {
                 formStep.classList.remove('opacity-0');
                 formStep.classList.add('opacity-100');
+                scarcityNotice.classList.remove('opacity-0');
+                scarcityNotice.classList.add('opacity-100');
             }, 50);
         }
 
         function revealBeginnerPath() {
+            updateQuestionProgress(1);
             document.getElementById('qualifierStep').style.display = 'none';
             const beginnerStep = document.getElementById('beginnerStep');
             beginnerStep.classList.remove('hidden');
@@ -292,6 +367,7 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
         }
 
         function revealBudgetPath() {
+            updateQuestionProgress(3);
             document.getElementById('qualifierStep2').style.display = 'none';
             const budgetStep = document.getElementById('budgetStep');
             budgetStep.classList.remove('hidden');
