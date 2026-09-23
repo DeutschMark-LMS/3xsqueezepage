@@ -154,6 +154,49 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
             <p class="text-base md:text-lg text-slate-600 font-medium max-w-2xl mx-auto mb-10 leading-relaxed">
                 Answer <strong class="text-slate-900">3 quick questions - takes under a minute</strong> to see if this training is right for you. If you are a fit, you will unlock the free training that helps you achieve <strong class="text-dmPurple">3x return</strong> on ad spend consistently.
             </p>
+                <!-- Live attendance bonus: make the reason to attend both days tangible before qualification -->
+                <section id="liveGifts" class="hidden max-w-4xl mx-auto mt-10 mb-12 text-left rounded-2xl border border-purple-100 bg-slate-50 px-4 py-8 shadow-sm md:px-8 md:py-10" aria-labelledby="live-gifts-heading">
+                    <div class="text-center mb-8">
+                        <span class="inline-flex items-center rounded-full bg-dmRed px-3 py-1 text-[11px] font-black uppercase tracking-[0.16em] text-white shadow-sm">Live attendance bonus</span>
+                        <h2 id="live-gifts-heading" class="mt-4 text-2xl md:text-4xl font-black text-slate-900 leading-tight mb-3">Show up live for both days.<br class="hidden md:block"> <span class="text-dmPurple">Unlock all 3 gifts.</span></h2>
+                        <p class="text-sm md:text-base text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">Be present for both days and leave with practical tools to validate faster, close more sales, and improve your Meta ad results.</p>
+                    </div>
+
+                    <div class="grid gap-4 md:grid-cols-3">
+                        <article class="bg-white border border-slate-200 border-t-4 border-t-dmPurple rounded-xl p-5 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-md">
+                            <div class="flex items-start justify-between gap-3 mb-4">
+                                <span class="flex h-9 w-9 items-center justify-center rounded-full bg-purple-100 text-dmPurple font-black text-sm">01</span>
+                                <span class="text-xs font-black uppercase tracking-wide text-dmPurple bg-purple-50 px-2 py-1 rounded">Worth ₦80k</span>
+                            </div>
+                            <h3 class="text-lg font-black text-slate-900 leading-snug mb-2">Product Validation Community</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">The community that saved me from wasting <strong class="text-slate-900">₦500,000 in ad spend last month</strong> by helping me validate the right ideas before putting money behind them.</p>
+                        </article>
+
+                        <article class="bg-white border border-slate-200 border-t-4 border-t-dmGold rounded-xl p-5 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-md">
+                            <div class="flex items-start justify-between gap-3 mb-4">
+                                <span class="flex h-9 w-9 items-center justify-center rounded-full bg-amber-100 text-amber-700 font-black text-sm">02</span>
+                                <span class="text-xs font-black uppercase tracking-wide text-amber-700 bg-amber-50 px-2 py-1 rounded">Worth ₦150k</span>
+                            </div>
+                            <h3 class="text-lg font-black text-slate-900 leading-snug mb-2">Red Hot Psychological Persuasion</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">Master the psychology of closing sales with the precision of a doctor. This is the program that helped me make my <strong class="text-slate-900">first ₦1m online</strong>.</p>
+                        </article>
+
+                        <article class="bg-slate-900 border border-slate-800 border-t-4 border-t-dmRed rounded-xl p-5 shadow-md text-white relative overflow-hidden transition duration-200 hover:-translate-y-1 hover:shadow-lg">
+                            <div class="absolute -right-8 -top-8 h-24 w-24 rounded-full border border-dmRed/40"></div>
+                            <div class="flex items-start justify-between gap-3 mb-4 relative">
+                                <span class="flex h-9 w-9 items-center justify-center rounded-full bg-red-100 text-dmRed font-black text-sm">03</span>
+                                <span class="text-xs font-black uppercase tracking-wide text-dmGold bg-white/10 px-2 py-1 rounded">Mystery gift</span>
+                            </div>
+                            <h3 class="text-lg font-black leading-snug mb-2 relative">The Meta Ads Advantage</h3>
+                            <p class="text-sm text-slate-300 leading-relaxed relative">A mystery resource that can drastically improve your Meta ad results. Its value is <strong class="text-white">more than an iPhone 16</strong> but less than a 2020 Toyota Camry.</p>
+                        </article>
+                    </div>
+
+                    <p class="mt-6 text-center text-base md:text-lg font-black text-dmPurple">You’re getting all 3 gifts absolutely free.</p>
+                    <button id="returnToFormBtn" type="button" class="hidden block mx-auto mt-6 bg-white hover:bg-dmPurple text-slate-700 hover:text-white border border-slate-300 hover:border-dmPurple font-black py-4 px-8 rounded-lg shadow-md transform transition hover:translate-y-1 text-base uppercase tracking-wide" onclick="scrollToLeadForm()">
+                        Reserve My Seat
+                    </button>
+                </section>
 
             <!-- Dynamic Action Box -->
             <div class="bg-slate-50 border-2 border-slate-200 rounded-xl p-6 md:p-8 max-w-md mx-auto relative shadow-inner transition-all duration-300" id="actionContainer">
@@ -219,7 +262,7 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                                 </button>
                             </div>
 
-                            <button id="submitAnswersBtn" type="button" class="hidden w-full mt-6 bg-dmPurple hover:bg-purple-900 text-white font-black py-4 px-5 rounded-lg shadow-md transform transition hover:-translate-y-1 text-base uppercase tracking-wide" onclick="submitAnswers()">
+                            <button id="submitAnswersBtn" type="button" class="hidden w-full mt-6 bg-white hover:bg-dmPurple text-slate-700 hover:text-white border border-slate-300 hover:border-dmPurple font-black py-4 px-5 rounded-lg shadow-md transform transition hover:-translate-y-1 text-base uppercase tracking-wide" onclick="submitAnswers()">
                                 Submit Answers
                             </button>
                         </div>
@@ -447,8 +490,14 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
         function revealForm() {
             const formStep = document.getElementById('formStep');
             const scarcityNotice = document.getElementById('scarcityNotice');
+            const liveGifts = document.getElementById('liveGifts');
+            const returnToFormBtn = document.getElementById('returnToFormBtn');
+            const actionContainer = document.getElementById('actionContainer');
             formStep.classList.remove('hidden');
             scarcityNotice.classList.remove('hidden');
+            actionContainer.after(liveGifts);
+            liveGifts.classList.remove('hidden');
+            returnToFormBtn.classList.remove('hidden');
             
             setTimeout(() => {
                 formStep.classList.remove('opacity-0');
@@ -456,6 +505,17 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                 scarcityNotice.classList.remove('opacity-0');
                 scarcityNotice.classList.add('opacity-100');
             }, 50);
+        }
+
+        function scrollToLeadForm() {
+            const actionContainer = document.getElementById('actionContainer');
+            const emailInput = document.querySelector('.ml-embedded input[type="email"]');
+
+            actionContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            if (emailInput) {
+                setTimeout(() => emailInput.focus(), 500);
+            }
         }
 
         function revealBeginnerPath() {
