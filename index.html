@@ -168,52 +168,73 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                     </div>
                 </div>
                 
-                <!-- Step 1: The Micro-Commitment Question (Q1) -->
-                <div id="qualifierStep">
-                    <p class="text-lg md:text-xl text-slate-800 mb-6 font-bold leading-snug">Do you currently have an existing digital product that you are trying to sell?</p>
-                    
-                    <div class="flex flex-col gap-3">
-                        <button onclick="revealStep2()" class="w-full bg-dmPurple hover:bg-purple-900 text-white font-bold py-3 px-5 rounded-lg shadow-md transform transition hover:-translate-y-1 text-sm">
-                            Yes, I have a digital product
-                        </button>
-                        <button onclick="revealBeginnerPath()" class="w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-5 rounded-lg transition text-sm">
-                            No, I am just starting out
-                        </button>
+                <div id="answerPanel">
+                    <div class="space-y-6">
+                        <div id="questionStep1" class="question-step text-left">
+                            <button type="button" class="back-btn hidden inline-flex items-center text-xs font-bold uppercase tracking-wide text-slate-500 hover:text-slate-800 transition" onclick="goBackQuestion()">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                                Back
+                            </button>
+                            <p class="text-lg md:text-xl text-slate-800 mt-4 mb-4 font-bold leading-snug">Do you currently have an existing digital product that you are trying to sell?</p>
+                            <div class="flex flex-col gap-3" data-question="q1">
+                                <button type="button" class="answer-btn w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="hasProduct" onclick="selectAnswer('q1', 'hasProduct')">
+                                    Yes, I have a digital product
+                                </button>
+                                <button type="button" class="answer-btn w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="beginner" onclick="selectAnswer('q1', 'beginner')">
+                                    No, I am just starting out
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="questionStep2" class="question-step hidden text-left">
+                            <button type="button" class="back-btn inline-flex items-center text-xs font-bold uppercase tracking-wide text-slate-500 hover:text-slate-800 transition" onclick="goBackQuestion()">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                                Back
+                            </button>
+                            <h3 class="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3 mt-4">Question 2</h3>
+                            <p class="text-lg md:text-xl text-slate-800 mb-4 font-bold leading-snug">Have you ever run Meta ads, got leads but made no or low sales for your digital product?</p>
+                            <div class="flex flex-col gap-3" data-question="q2">
+                                <button type="button" class="answer-btn w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="hasAdsIssue" onclick="selectAnswer('q2', 'hasAdsIssue')">
+                                    Yes, that has happened to me
+                                </button>
+                                <button type="button" class="answer-btn w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="noAds" onclick="selectAnswer('q2', 'noAds')">
+                                    No, not yet
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="questionStep3" class="question-step hidden text-left">
+                            <button type="button" class="back-btn inline-flex items-center text-xs font-bold uppercase tracking-wide text-slate-500 hover:text-slate-800 transition" onclick="goBackQuestion()">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                                Back
+                            </button>
+                            <h3 class="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3 mt-4">Question 3</h3>
+                            <p class="text-lg md:text-xl text-slate-800 mb-4 font-bold leading-snug">Are you prepared to invest at least ₦100,000 in ads for your next campaign after you have learnt this 3x system?</p>
+                            <div class="flex flex-col gap-3" data-question="q3">
+                                <button type="button" class="answer-btn w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="ready" onclick="selectAnswer('q3', 'ready')">
+                                    Yes, I am prepared
+                                </button>
+                                <button type="button" class="answer-btn w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="notReady" onclick="selectAnswer('q3', 'notReady')">
+                                    No, I am not ready yet
+                                </button>
+                            </div>
+
+                            <button id="submitAnswersBtn" type="button" class="hidden w-full mt-6 bg-dmPurple hover:bg-purple-900 text-white font-black py-4 px-5 rounded-lg shadow-md transform transition hover:-translate-y-1 text-base uppercase tracking-wide" onclick="submitAnswers()">
+                                Submit Answers
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Step 2: Meta Ads Experience Question (Q2) -->
-                <div id="qualifierStepAds" class="hidden opacity-0 transition-opacity duration-500">
-                    <h3 class="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3">Question 2</h3>
-                    <p class="text-lg md:text-xl text-slate-800 mb-6 font-bold leading-snug">Have you ever run Meta ads, got leads but made no or low sales for your digital product?</p>
-                    
-                    <div class="flex flex-col gap-3">
-                        <button onclick="revealStep3()" class="w-full bg-dmPurple hover:bg-purple-900 text-white font-bold py-3 px-5 rounded-lg shadow-md transform transition hover:-translate-y-1 text-sm">
-                            Yes, that has happened to me
-                        </button>
-                        <button onclick="revealNoAdsPath()" class="w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-5 rounded-lg transition text-sm">
-                            No, not yet
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Step 3: Budget Qualification Question (Q3) -->
-                <div id="qualifierStep2" class="hidden opacity-0 transition-opacity duration-500">
-                    <h3 class="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3">Question 3</h3>
-                    <p class="text-lg md:text-xl text-slate-800 mb-6 font-bold leading-snug">Are you prepared to invest at least ₦100,000 in ads for your next campaign after you have learnt this 3x system?</p>
-                    
-                    <div class="flex flex-col gap-3">
-                        <button onclick="revealForm()" class="w-full bg-dmPurple hover:bg-purple-900 text-white font-bold py-3 px-5 rounded-lg shadow-md transform transition hover:-translate-y-1 text-sm">
-                            Yes, I am prepared
-                        </button>
-                        <button onclick="revealBudgetPath()" class="w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-5 rounded-lg transition text-sm">
-                            No, I am not ready yet
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Step 4: The Form (Hidden by default) -->
+                <!-- Step 4: Congrats + Form (Hidden by default) -->
                 <div id="formStep" class="hidden opacity-0 transition-opacity duration-500">
+                    <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 3"></path></svg>
+                    </div>
+
+                    <h3 class="font-black text-2xl text-slate-900 mb-2">You’re a fit.</h3>
+                    <p class="text-sm text-slate-600 mb-5 font-medium leading-relaxed">Based on your answers, you match the exact profile this training is built for. You’re eligible for the free invite.</p>
+
                     <h3 class="font-bold text-xl text-slate-800 mb-2">Where should we send your invite?</h3>
                     <p class="text-sm text-slate-500 mb-4 font-medium">Drop your best email below and I'll instantly hand you the private WhatsApp link.</p>
                     
@@ -294,58 +315,141 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
 
     <!-- Interactive Logic & Conversion Tracking Script -->
     <script>
+        const selectedAnswers = {
+            q1: null,
+            q2: null,
+            q3: null
+        };
+
+        const questionOrder = ['q1', 'q2', 'q3'];
+        let currentQuestionIndex = 0;
+
         function updateQuestionProgress(answeredQuestions) {
             document.getElementById('progressNumber').textContent = answeredQuestions;
             document.getElementById('progressBar').style.width = `${answeredQuestions / 3 * 100}%`;
         }
 
-        // Logic for the Micro-Commitment step
-        function revealStep2() {
-            updateQuestionProgress(1);
-            document.getElementById('qualifierStep').style.display = 'none';
-            const qualifierStepAds = document.getElementById('qualifierStepAds');
-            qualifierStepAds.classList.remove('hidden');
-            
-            // Slight delay to allow display:block to apply before animating opacity
-            setTimeout(() => {
-                qualifierStepAds.classList.remove('opacity-0');
-                qualifierStepAds.classList.add('opacity-100');
-            }, 50);
+        function updateAnswerButtonStyles(questionKey, selectedValue) {
+            const answerButtons = document.querySelectorAll(`[data-question="${questionKey}"] .answer-btn`);
+            answerButtons.forEach((button) => {
+                const isSelected = button.dataset.value === selectedValue;
+
+                button.classList.toggle('bg-dmPurple', isSelected);
+                button.classList.toggle('text-white', isSelected);
+                button.classList.toggle('border-dmPurple', isSelected);
+                button.classList.toggle('shadow-md', isSelected);
+                button.classList.toggle('hover:bg-dmPurple', isSelected);
+                button.classList.toggle('hover:bg-slate-100', !isSelected);
+
+                button.classList.toggle('bg-white', !isSelected);
+                button.classList.toggle('text-slate-600', !isSelected);
+                button.classList.toggle('border-slate-300', !isSelected);
+            });
         }
 
-        function revealStep3() {
-            updateQuestionProgress(2);
-            document.getElementById('qualifierStepAds').style.display = 'none';
-            const qualifierStep2 = document.getElementById('qualifierStep2');
-            qualifierStep2.classList.remove('hidden');
-            
-            setTimeout(() => {
-                qualifierStep2.classList.remove('opacity-0');
-                qualifierStep2.classList.add('opacity-100');
-            }, 50);
+        function updateSubmitButton() {
+            const answeredCount = Object.values(selectedAnswers).filter(Boolean).length;
+            const submitBtn = document.getElementById('submitAnswersBtn');
+            const readyToSubmit = answeredCount === 3;
+
+            updateQuestionProgress(answeredCount);
+
+            if (readyToSubmit && currentQuestionIndex === 2) {
+                submitBtn.classList.remove('hidden');
+            } else {
+                submitBtn.classList.add('hidden');
+            }
         }
 
-        function revealNoAdsPath() {
-            updateQuestionProgress(2);
-            document.getElementById('qualifierStepAds').style.display = 'none';
-            const noAdsStep = document.getElementById('noAdsStep');
-            noAdsStep.classList.remove('hidden');
-            
-            setTimeout(() => {
-                noAdsStep.classList.remove('opacity-0');
-                noAdsStep.classList.add('opacity-100');
-            }, 50);
+        function renderCurrentQuestion() {
+            questionOrder.forEach((questionKey, index) => {
+                const step = document.getElementById(`questionStep${index + 1}`);
+                if (!step) return;
+                step.classList.toggle('hidden', index !== currentQuestionIndex);
+            });
+
+            const currentStep = document.getElementById(`questionStep${currentQuestionIndex + 1}`);
+            if (currentStep) {
+                currentStep.querySelectorAll('.answer-btn').forEach((button) => {
+                    const questionKey = button.closest('[data-question]')?.dataset.question;
+                    const isSelected = questionKey && selectedAnswers[questionKey] === button.dataset.value;
+
+                    if (isSelected) {
+                        button.classList.add('bg-dmPurple', 'text-white', 'border-dmPurple', 'shadow-md', 'hover:bg-dmPurple');
+                        button.classList.remove('bg-white', 'text-slate-600', 'border-slate-300', 'hover:bg-slate-100');
+                    } else {
+                        button.classList.add('bg-white', 'text-slate-600', 'border-slate-300', 'hover:bg-slate-100');
+                        button.classList.remove('bg-dmPurple', 'text-white', 'border-dmPurple', 'shadow-md', 'hover:bg-dmPurple');
+                    }
+                });
+            }
+
+            updateSubmitButton();
+        }
+
+        function selectAnswer(questionKey, answerValue) {
+            selectedAnswers[questionKey] = answerValue;
+            updateAnswerButtonStyles(questionKey, answerValue);
+
+            if (questionKey === 'q3') {
+                updateSubmitButton();
+                return;
+            }
+
+            currentQuestionIndex += 1;
+            renderCurrentQuestion();
+        }
+
+        function goBackQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex -= 1;
+                renderCurrentQuestion();
+            }
+        }
+
+        function submitAnswers() {
+            const answeredCount = Object.values(selectedAnswers).filter(Boolean).length;
+            if (answeredCount !== 3) {
+                return;
+            }
+
+            const q1 = selectedAnswers.q1;
+            const q2 = selectedAnswers.q2;
+            const q3 = selectedAnswers.q3;
+
+            document.getElementById('answerPanel').style.display = 'none';
+            updateQuestionProgress(3);
+
+            if (q1 === 'beginner') {
+                revealBeginnerPath();
+                return;
+            }
+
+            if (q2 === 'noAds') {
+                revealNoAdsPath();
+                return;
+            }
+
+            if (q3 === 'notReady') {
+                revealBudgetPath();
+                return;
+            }
+
+            if (q1 === 'hasProduct' && q2 === 'hasAdsIssue' && q3 === 'ready') {
+                revealForm();
+                return;
+            }
+
+            // Final fallback: if any answer combination is not an exact fit, keep them on the resource path.
+            revealNoAdsPath();
         }
 
         function revealForm() {
-            updateQuestionProgress(3);
-            document.getElementById('qualifierStep2').style.display = 'none';
             const formStep = document.getElementById('formStep');
             const scarcityNotice = document.getElementById('scarcityNotice');
             formStep.classList.remove('hidden');
             scarcityNotice.classList.remove('hidden');
             
-            // Slight delay to allow display:block to apply before animating opacity
             setTimeout(() => {
                 formStep.classList.remove('opacity-0');
                 formStep.classList.add('opacity-100');
@@ -355,28 +459,63 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
         }
 
         function revealBeginnerPath() {
-            updateQuestionProgress(1);
-            document.getElementById('qualifierStep').style.display = 'none';
+            const answerPanel = document.getElementById('answerPanel');
             const beginnerStep = document.getElementById('beginnerStep');
+            const noAdsStep = document.getElementById('noAdsStep');
+            const budgetStep = document.getElementById('budgetStep');
+            const formStep = document.getElementById('formStep');
+
+            answerPanel.style.display = 'none';
+            noAdsStep.classList.add('hidden');
+            budgetStep.classList.add('hidden');
+            formStep.classList.add('hidden');
             beginnerStep.classList.remove('hidden');
-            
+
             setTimeout(() => {
                 beginnerStep.classList.remove('opacity-0');
                 beginnerStep.classList.add('opacity-100');
             }, 50);
         }
 
-        function revealBudgetPath() {
-            updateQuestionProgress(3);
-            document.getElementById('qualifierStep2').style.display = 'none';
+        function revealNoAdsPath() {
+            const answerPanel = document.getElementById('answerPanel');
+            const beginnerStep = document.getElementById('beginnerStep');
+            const noAdsStep = document.getElementById('noAdsStep');
             const budgetStep = document.getElementById('budgetStep');
+            const formStep = document.getElementById('formStep');
+
+            answerPanel.style.display = 'none';
+            beginnerStep.classList.add('hidden');
+            budgetStep.classList.add('hidden');
+            formStep.classList.add('hidden');
+            noAdsStep.classList.remove('hidden');
+
+            setTimeout(() => {
+                noAdsStep.classList.remove('opacity-0');
+                noAdsStep.classList.add('opacity-100');
+            }, 50);
+        }
+
+        function revealBudgetPath() {
+            const answerPanel = document.getElementById('answerPanel');
+            const beginnerStep = document.getElementById('beginnerStep');
+            const noAdsStep = document.getElementById('noAdsStep');
+            const budgetStep = document.getElementById('budgetStep');
+            const formStep = document.getElementById('formStep');
+
+            answerPanel.style.display = 'none';
+            beginnerStep.classList.add('hidden');
+            noAdsStep.classList.add('hidden');
+            formStep.classList.add('hidden');
             budgetStep.classList.remove('hidden');
-            
+
             setTimeout(() => {
                 budgetStep.classList.remove('opacity-0');
                 budgetStep.classList.add('opacity-100');
             }, 50);
         }
+
+        renderCurrentQuestion();
 
         (function () {
         var leadTracked = false;
