@@ -152,7 +152,7 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
             
             <!-- Qualification seed -->
             <p class="text-base md:text-lg text-slate-600 font-medium max-w-2xl mx-auto mb-10 leading-relaxed">
-                Answer <strong class="text-slate-900">3 quick questions - takes under a minute</strong> to see if this training is right for you. If you are a fit, you will unlock the free training that helps you achieve <strong class="text-dmPurple">3x return</strong> on ad spend consistently.
+                Answer <strong class="text-slate-900">2 quick questions - takes under a minute</strong> to see if this training is right for you. If you are a fit, you will unlock the free training that helps you achieve <strong class="text-dmPurple">3x return</strong> on ad spend consistently.
             </p>
                 <!-- Live attendance bonus: make the reason to attend both days tangible before qualification -->
                 <section id="liveGifts" class="hidden max-w-4xl mx-auto mt-10 mb-12 text-left rounded-2xl border border-purple-100 bg-slate-50 px-4 py-8 shadow-sm md:px-8 md:py-10" aria-labelledby="live-gifts-heading">
@@ -204,7 +204,7 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                 <div id="questionProgress" class="mb-8 text-left">
                     <div class="flex items-center justify-between mb-2 text-xs font-bold uppercase tracking-wide text-slate-500">
                         <span>Progress</span>
-                        <span>Question <span id="progressNumber">0</span> of 3</span>
+                        <span>Question <span id="progressNumber">0</span> of 2</span>
                     </div>
                     <div class="h-1.5 bg-slate-200 rounded-full overflow-hidden">
                         <div id="progressBar" class="h-full bg-dmPurple rounded-full transition-all duration-500" style="width: 0%"></div>
@@ -214,19 +214,16 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                 <div id="answerPanel">
                     <div class="space-y-6">
                         <div id="questionStep1" class="question-step text-left">
-                            <button type="button" class="back-btn hidden inline-flex items-center text-xs font-bold uppercase tracking-wide text-slate-500 hover:text-slate-800 transition" onclick="goBackQuestion()">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                                Back
-                            </button>
-                            <p class="text-lg md:text-xl text-slate-800 mt-4 mb-4 font-bold leading-snug">Do you currently have an existing digital product that you are trying to sell?</p>
+                            <h3 class="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3">Question 1</h3>
+                            <p class="text-lg md:text-xl text-slate-800 mb-4 font-bold leading-snug">Which of these best describes your digital product business right now?</p>
                             <div class="flex flex-col gap-3" data-question="q1">
-                                <button type="button" class="answer-btn w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="hasProduct" onclick="selectAnswer('q1', 'hasProduct')">
-                                    Yes, I have a digital product
-                                </button>
-                                <button type="button" class="answer-btn w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="beginner" onclick="selectAnswer('q1', 'beginner')">
-                                    No, I am just starting out
-                                </button>
+                                <button type="button" aria-pressed="false" class="answer-btn flex w-full items-start gap-3 bg-white text-left hover:bg-purple-50 text-gray-700 border border-purple-200 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="A" onclick="selectAnswer('q1', 'A')"><span class="option-check mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-purple-300 bg-white text-transparent transition">✓</span><span>I don't have a finished digital product yet.</span></button>
+                                <button type="button" aria-pressed="false" class="answer-btn flex w-full items-start gap-3 bg-white text-left hover:bg-purple-50 text-gray-700 border border-purple-200 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="B" onclick="selectAnswer('q1', 'B')"><span class="option-check mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-purple-300 bg-white text-transparent transition">✓</span><span>I have a product, but I've never run Meta Ads for it.</span></button>
+                                <button type="button" aria-pressed="false" class="answer-btn flex w-full items-start gap-3 bg-white text-left hover:bg-purple-50 text-gray-700 border border-purple-200 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="C" onclick="selectAnswer('q1', 'C')"><span class="option-check mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-purple-300 bg-white text-transparent transition">✓</span><span>I run ads and get leads, but they just keep complaining that there is no money, and disappear when it's time to pay.</span></button>
+                                <button type="button" aria-pressed="false" class="answer-btn flex w-full items-start gap-3 bg-white text-left hover:bg-purple-50 text-gray-700 border border-purple-200 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="D" onclick="selectAnswer('q1', 'D')"><span class="option-check mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-purple-300 bg-white text-transparent transition">✓</span><span>I run ads and get sales, but I don't make enough returns on my ad spend.</span></button>
+                                <button type="button" aria-pressed="false" class="answer-btn flex w-full items-start gap-3 bg-white text-left hover:bg-purple-50 text-gray-700 border border-purple-200 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="E" onclick="selectAnswer('q1', 'E')"><span class="option-check mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-purple-300 bg-white text-transparent transition">✓</span><span>I run ads and make a profit, but I want to scale my campaigns to consistently hit 3X ROAS and beyond.</span></button>
                             </div>
+                            <button id="nextQuestionBtn" type="button" disabled class="hidden w-full mt-6 bg-purple-700 hover:bg-purple-800 disabled:cursor-not-allowed disabled:opacity-50 text-white font-bold py-4 px-5 rounded-lg transition text-base" onclick="goToNextQuestion()">Next Question</button>
                         </div>
 
                         <div id="questionStep2" class="question-step hidden text-left">
@@ -235,36 +232,14 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                                 Back
                             </button>
                             <h3 class="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3 mt-4">Question 2</h3>
-                            <p class="text-lg md:text-xl text-slate-800 mb-4 font-bold leading-snug">Have you ever run Meta ads, got leads but made no or low sales for your digital product?</p>
+                            <p class="text-lg md:text-xl text-slate-800 mb-4 font-bold leading-snug">If accepted into this cohort, how much ad budget do you have ready to deploy using the 3X System?</p>
                             <div class="flex flex-col gap-3" data-question="q2">
-                                <button type="button" class="answer-btn w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="hasAdsIssue" onclick="selectAnswer('q2', 'hasAdsIssue')">
-                                    Yes, that has happened to me
-                                </button>
-                                <button type="button" class="answer-btn w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="noAds" onclick="selectAnswer('q2', 'noAds')">
-                                    No, not yet
-                                </button>
+                                <button type="button" aria-pressed="false" class="answer-btn flex w-full items-start gap-3 bg-white text-left hover:bg-purple-50 text-gray-700 border border-purple-200 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="A" onclick="selectAnswer('q2', 'A')"><span class="option-check mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-purple-300 bg-white text-transparent transition">✓</span><span>I don't have much to spend on ads right now.</span></button>
+                                <button type="button" aria-pressed="false" class="answer-btn flex w-full items-start gap-3 bg-white text-left hover:bg-purple-50 text-gray-700 border border-purple-200 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="B" onclick="selectAnswer('q2', 'B')"><span class="option-check mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-purple-300 bg-white text-transparent transition">✓</span><span>At least ₦50,000</span></button>
+                                <button type="button" aria-pressed="false" class="answer-btn flex w-full items-start gap-3 bg-white text-left hover:bg-purple-50 text-gray-700 border border-purple-200 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="C" onclick="selectAnswer('q2', 'C')"><span class="option-check mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-purple-300 bg-white text-transparent transition">✓</span><span>At least ₦100,000</span></button>
+                                <button type="button" aria-pressed="false" class="answer-btn flex w-full items-start gap-3 bg-white text-left hover:bg-purple-50 text-gray-700 border border-purple-200 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="D" onclick="selectAnswer('q2', 'D')"><span class="option-check mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-purple-300 bg-white text-transparent transition">✓</span><span>₦200,000 or more</span></button>
                             </div>
-                        </div>
-
-                        <div id="questionStep3" class="question-step hidden text-left">
-                            <button type="button" class="back-btn inline-flex items-center text-xs font-bold uppercase tracking-wide text-slate-500 hover:text-slate-800 transition" onclick="goBackQuestion()">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                                Back
-                            </button>
-                            <h3 class="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3 mt-4">Question 3</h3>
-                            <p class="text-lg md:text-xl text-slate-800 mb-4 font-bold leading-snug">Are you prepared to invest at least ₦100,000 in ads for your next campaign after you have learnt this 3x system?</p>
-                            <div class="flex flex-col gap-3" data-question="q3">
-                                <button type="button" class="answer-btn w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="ready" onclick="selectAnswer('q3', 'ready')">
-                                    Yes, I am prepared
-                                </button>
-                                <button type="button" class="answer-btn w-full bg-white hover:bg-slate-100 text-slate-600 border border-slate-300 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="notReady" onclick="selectAnswer('q3', 'notReady')">
-                                    No, I am not ready yet
-                                </button>
-                            </div>
-
-                            <button id="submitAnswersBtn" type="button" class="hidden w-full mt-6 bg-white hover:bg-dmPurple text-slate-700 hover:text-white border border-slate-300 hover:border-dmPurple font-black py-4 px-5 rounded-lg shadow-md transform transition hover:-translate-y-1 text-base uppercase tracking-wide" onclick="submitAnswers()">
-                                Submit Answers
-                            </button>
+                            <button id="submitAnswersBtn" type="button" disabled class="hidden w-full mt-6 bg-purple-700 hover:bg-purple-800 disabled:cursor-not-allowed disabled:opacity-50 text-white font-bold py-4 px-5 rounded-lg transition text-base" onclick="submitAnswers()">Submit My Answers</button>
                         </div>
                     </div>
                 </div>
@@ -306,12 +281,12 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                     <div class="w-12 h-12 bg-amber-100 text-dmGold rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
-                    <h3 class="font-bold text-xl text-slate-800 mb-2">Let's build your product first!</h3>
+                    <h3 class="font-bold text-xl text-slate-800 mb-2">So sorry, you're not a fit for this cohort right now.</h3>
                     <p class="text-sm text-slate-600 mb-6 font-medium leading-relaxed">
-                        This specific 3X scaling system requires an existing product. But don't worry—I've put together a <strong class="text-slate-900">free 2-Day Masterclass</strong> to help you launch your very first digital product from scratch.
+                        But that does not mean you cannot grow. I've put together a <strong class="text-slate-900">free 2-Day Masterclass</strong> to help you build the foundation you need to create, position, and sell your digital product before scaling with Meta Ads.
                     </p>
                     
-                    <a href="https://youtube.com/playlist?list=PLQWt7BuTENb1ThXC122za1Ae6pOmklyLu&si=NzOpr_OR2V35qWGV" class="w-full inline-block bg-dmGold hover:bg-amber-600 text-white font-bold py-4 px-6 rounded-lg shadow-md transform transition hover:-translate-y-1 text-lg">
+                    <a href="https://beginner-training.vercel.app" class="w-full inline-block bg-dmGold hover:bg-amber-600 text-white font-bold py-4 px-6 rounded-lg shadow-md transform transition hover:-translate-y-1 text-lg">
                         Watch The Beginner Series
                     </a>
                 </div>
@@ -326,7 +301,7 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                         The 3X system is built for product owners who have already tested Meta ads. Before you put money behind a campaign, use these free lessons to learn how to position and sell your digital product so your first ad spend has a real chance of converting.
                     </p>
                     
-                    <a href="https://youtube.com/playlist?list=PLQWt7BuTENb1ThXC122za1Ae6pOmklyLu&si=NzOpr_OR2V35qWGV" class="w-full inline-block bg-dmGold hover:bg-amber-600 text-white font-bold py-4 px-6 rounded-lg shadow-md transform transition hover:-translate-y-1 text-lg">
+                    <a href="https://beginner-training.vercel.app" class="w-full inline-block bg-dmGold hover:bg-amber-600 text-white font-bold py-4 px-6 rounded-lg shadow-md transform transition hover:-translate-y-1 text-lg">
                         Watch The Free Lessons First
                     </a>
                 </div>
@@ -341,7 +316,7 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                         When you are ready to put at least <strong class="text-slate-900">₦100,000</strong> behind your next campaign, come back and claim the training. For now, use the free lessons below to prepare.
                     </p>
                     
-                    <a href="https://youtube.com/playlist?list=PLQWt7BuTENb1ThXC122za1Ae6pOmklyLu&si=NzOpr_OR2V35qWGV" class="w-full inline-block bg-dmGold hover:bg-amber-600 text-white font-bold py-4 px-6 rounded-lg shadow-md transform transition hover:-translate-y-1 text-lg">
+                    <a href="https://beginner-training.vercel.app" class="w-full inline-block bg-dmGold hover:bg-amber-600 text-white font-bold py-4 px-6 rounded-lg shadow-md transform transition hover:-translate-y-1 text-lg">
                         Prepare With The Free Lessons
                     </a>
                 </div>
@@ -370,48 +345,52 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
     <script>
         const selectedAnswers = {
             q1: null,
-            q2: null,
-            q3: null
+            q2: null
         };
 
-        const questionOrder = ['q1', 'q2', 'q3'];
+        const questionOrder = ['q1', 'q2'];
         let currentQuestionIndex = 0;
 
         function updateQuestionProgress(answeredQuestions) {
             document.getElementById('progressNumber').textContent = answeredQuestions;
-            document.getElementById('progressBar').style.width = `${answeredQuestions / 3 * 100}%`;
+            document.getElementById('progressBar').style.width = `${answeredQuestions / 2 * 100}%`;
         }
 
         function updateAnswerButtonStyles(questionKey, selectedValue) {
             const answerButtons = document.querySelectorAll(`[data-question="${questionKey}"] .answer-btn`);
             answerButtons.forEach((button) => {
                 const isSelected = button.dataset.value === selectedValue;
+                const checkmark = button.querySelector('.option-check');
 
-                button.classList.toggle('bg-dmPurple', isSelected);
+                button.classList.toggle('bg-purple-600', isSelected);
                 button.classList.toggle('text-white', isSelected);
-                button.classList.toggle('border-dmPurple', isSelected);
+                button.classList.toggle('border-purple-700', isSelected);
                 button.classList.toggle('shadow-md', isSelected);
-                button.classList.toggle('hover:bg-dmPurple', isSelected);
-                button.classList.toggle('hover:bg-slate-100', !isSelected);
+                button.classList.toggle('hover:bg-purple-50', !isSelected);
 
                 button.classList.toggle('bg-white', !isSelected);
-                button.classList.toggle('text-slate-600', !isSelected);
-                button.classList.toggle('border-slate-300', !isSelected);
+                button.classList.toggle('text-gray-700', !isSelected);
+                button.classList.toggle('border-purple-200', !isSelected);
+                button.setAttribute('aria-pressed', String(isSelected));
+                checkmark.classList.toggle('bg-white', isSelected);
+                checkmark.classList.toggle('border-white', isSelected);
+                checkmark.classList.toggle('text-purple-600', isSelected);
+                checkmark.classList.toggle('border-purple-300', !isSelected);
+                checkmark.classList.toggle('text-transparent', !isSelected);
             });
         }
 
         function updateSubmitButton() {
             const answeredCount = Object.values(selectedAnswers).filter(Boolean).length;
+            const nextButton = document.getElementById('nextQuestionBtn');
             const submitBtn = document.getElementById('submitAnswersBtn');
-            const readyToSubmit = answeredCount === 3;
+            const readyToSubmit = answeredCount === 2;
 
             updateQuestionProgress(answeredCount);
-
-            if (readyToSubmit && currentQuestionIndex === 2) {
-                submitBtn.classList.remove('hidden');
-            } else {
-                submitBtn.classList.add('hidden');
-            }
+            nextButton.disabled = !selectedAnswers.q1;
+            nextButton.classList.toggle('hidden', !selectedAnswers.q1);
+            submitBtn.disabled = !selectedAnswers.q2;
+            submitBtn.classList.toggle('hidden', !selectedAnswers.q2);
         }
 
         function renderCurrentQuestion() {
@@ -426,13 +405,20 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                 currentStep.querySelectorAll('.answer-btn').forEach((button) => {
                     const questionKey = button.closest('[data-question]')?.dataset.question;
                     const isSelected = questionKey && selectedAnswers[questionKey] === button.dataset.value;
+                    const checkmark = button.querySelector('.option-check');
 
                     if (isSelected) {
-                        button.classList.add('bg-dmPurple', 'text-white', 'border-dmPurple', 'shadow-md', 'hover:bg-dmPurple');
-                        button.classList.remove('bg-white', 'text-slate-600', 'border-slate-300', 'hover:bg-slate-100');
+                        button.classList.add('bg-purple-600', 'text-white', 'border-purple-700', 'shadow-md');
+                        button.classList.remove('bg-white', 'text-gray-700', 'border-purple-200', 'hover:bg-purple-50');
+                        button.setAttribute('aria-pressed', 'true');
+                        checkmark.classList.add('bg-white', 'border-white', 'text-purple-600');
+                        checkmark.classList.remove('border-purple-300', 'text-transparent');
                     } else {
-                        button.classList.add('bg-white', 'text-slate-600', 'border-slate-300', 'hover:bg-slate-100');
-                        button.classList.remove('bg-dmPurple', 'text-white', 'border-dmPurple', 'shadow-md', 'hover:bg-dmPurple');
+                        button.classList.add('bg-white', 'text-gray-700', 'border-purple-200', 'hover:bg-purple-50');
+                        button.classList.remove('bg-purple-600', 'text-white', 'border-purple-700', 'shadow-md');
+                        button.setAttribute('aria-pressed', 'false');
+                        checkmark.classList.add('border-purple-300', 'text-transparent');
+                        checkmark.classList.remove('bg-white', 'border-white', 'text-purple-600');
                     }
                 });
             }
@@ -443,13 +429,14 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
         function selectAnswer(questionKey, answerValue) {
             selectedAnswers[questionKey] = answerValue;
             updateAnswerButtonStyles(questionKey, answerValue);
+            updateSubmitButton();
+        }
 
-            if (questionKey === 'q3') {
-                updateSubmitButton();
+        function goToNextQuestion() {
+            if (!selectedAnswers.q1) {
                 return;
             }
-
-            currentQuestionIndex += 1;
+            currentQuestionIndex = 1;
             renderCurrentQuestion();
         }
 
@@ -462,39 +449,25 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
 
         function submitAnswers() {
             const answeredCount = Object.values(selectedAnswers).filter(Boolean).length;
-            if (answeredCount !== 3) {
+            if (answeredCount !== 2) {
                 return;
             }
 
             const q1 = selectedAnswers.q1;
             const q2 = selectedAnswers.q2;
-            const q3 = selectedAnswers.q3;
 
             document.getElementById('answerPanel').style.display = 'none';
-            updateQuestionProgress(3);
+            document.getElementById('questionProgress').style.display = 'none';
+            updateQuestionProgress(2);
 
-            if (q1 === 'beginner') {
+            if (['A', 'B'].includes(q1) || ['A', 'B'].includes(q2)) {
                 revealBeginnerPath();
                 return;
             }
 
-            if (q2 === 'noAds') {
-                revealNoAdsPath();
-                return;
-            }
-
-            if (q3 === 'notReady') {
-                revealBudgetPath();
-                return;
-            }
-
-            if (q1 === 'hasProduct' && q2 === 'hasAdsIssue' && q3 === 'ready') {
+            if (['C', 'D', 'E'].includes(q1) && ['C', 'D'].includes(q2)) {
                 revealForm();
-                return;
             }
-
-            // Final fallback: if any answer combination is not an exact fit, keep them on the resource path.
-            revealNoAdsPath();
         }
 
         function revealForm() {
