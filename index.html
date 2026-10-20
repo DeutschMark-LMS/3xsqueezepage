@@ -602,44 +602,74 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
         renderCurrentQuestion();
 
         (function () {
-        var leadTracked = false;
+            var leadTracked = false;
 
-        function trackLeadOnce() {
-            if (leadTracked || typeof fbq !== 'function') {
-                return;
+            function trackLeadOnce() {
+                if (leadTracked || typeof fbq !== 'function') {
+                    return;
+                }
+                leadTracked = true;
+                fbq('track', 'Lead');
             }
-            leadTracked = true;
-            fbq('track', 'Lead');
-        }
 
-        function checkMailerLiteSuccess() {
-            var successSelectors = [
-                '.ml-form-successBody',
-                '.ml-form-successContainer',
-                '.ml-form-embedSuccess'
-            ];
-
-            for (var i = 0; i < successSelectors.length; i++) {
-                var element = document.querySelector(successSelectors[i]);
-                // CRITICAL FIX: Ensure the element exists AND has physical dimensions (is visible)
-                if (element && (element.offsetWidth > 0 || element.offsetHeight > 0)) {
+            // Wrap MailerLite's redirect callback to guarantee a 600ms buffer for Meta Pixel transmission
+            function wrapSuccessRedirect(originalFn) {
+                return function() {
+                    var args = arguments;
                     trackLeadOnce();
-                    break;
+                    setTimeout(function() {
+                        if (typeof originalFn === 'function') {
+                            try {
+                                originalFn.apply(window, args);
+                                return;
+                            } catch (e) {}
+                        }
+                        window.location.href = 'https://chat.whatsapp.com/KKbKh1DcTtPL4jRPXfKEhb?s=cl&p=a&mlu=4&ilr=4';
+                    }, 600);
+                };
+            }
+
+            // Intercept form MrL9t5 success callback via property descriptor
+            var _mlSuccess = null;
+            try {
+                Object.defineProperty(window, 'ml_webform_success_42120759', {
+                    configurable: true,
+                    enumerable: true,
+                    get: function() {
+                        return wrapSuccessRedirect(_mlSuccess);
+                    },
+                    set: function(fn) {
+                        _mlSuccess = fn;
+                    }
+                });
+            } catch (err) {}
+
+            // Secondary safety net: MutationObserver for success container appearance
+            function checkMailerLiteSuccess() {
+                var successSelectors = [
+                    '.ml-form-successBody',
+                    '.ml-form-successContainer',
+                    '.ml-form-embedSuccess'
+                ];
+
+                for (var i = 0; i < successSelectors.length; i++) {
+                    var element = document.querySelector(successSelectors[i]);
+                    if (element && (element.offsetWidth > 0 || element.offsetHeight > 0)) {
+                        trackLeadOnce();
+                        break;
+                    }
                 }
             }
-        }
 
-        var targetNode = document.querySelector('.ml-embedded') || document.body;
-        
-        // Update observer to also watch for attribute changes (like MailerLite removing display:none)
-        var observer = new MutationObserver(checkMailerLiteSuccess);
-        observer.observe(targetNode, {
-            childList: true,
-            subtree: true,
-            attributes: true, 
-            attributeFilter: ['style', 'class']
-        });
-    })();
+            var targetNode = document.querySelector('.ml-embedded') || document.body;
+            var observer = new MutationObserver(checkMailerLiteSuccess);
+            observer.observe(targetNode, {
+                childList: true,
+                subtree: true,
+                attributes: true, 
+                attributeFilter: ['style', 'class']
+            });
+        })();
     </script>
 </body>
 </html>
