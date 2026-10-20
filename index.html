@@ -312,7 +312,7 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                     </div>
                     <h3 class="font-bold text-xl text-slate-800 mb-2">No problem, timing matters!</h3>
                     <p class="text-sm text-slate-600 mb-6 font-medium leading-relaxed">
-                        To hit a consistent 3X return using this system, you need a minimum testing budget of at least <strong class="text-slate-900">₦100,000</strong> ready for your next campaign. When you are ready to invest that into ads, come back and join us. In the meantime, use the free lessons below to prepare your funnel and creatives.
+                        To hit a consistent 3X return using this system, you need a minimum testing budget of at least <strong class="text-slate-900">₦50,000</strong> ready for your next campaign. When you are ready to invest that into ads, come back and join us. In the meantime, use the free lessons below to prepare your funnel and creatives.
                     </p>
                     
                     <a href="https://beginner-training.vercel.app" class="w-full inline-block bg-dmGold hover:bg-amber-600 text-white font-bold py-4 px-6 rounded-lg shadow-md transform transition hover:-translate-y-1 text-lg">
@@ -425,7 +425,13 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
             updateSubmitButton();
         }
 
+        var quizStartedTracked = false;
+
         function selectAnswer(questionKey, answerValue) {
+            if (!quizStartedTracked && typeof fbq === 'function') {
+                quizStartedTracked = true;
+                fbq('trackCustom', 'QuizStarted');
+            }
             selectedAnswers[questionKey] = answerValue;
             updateAnswerButtonStyles(questionKey, answerValue);
             updateSubmitButton();
@@ -434,6 +440,9 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
         function goToNextQuestion() {
             if (!selectedAnswers.q1) {
                 return;
+            }
+            if (typeof fbq === 'function') {
+                fbq('trackCustom', 'QuizStep1Completed', { format_selected: selectedAnswers.q1 });
             }
             currentQuestionIndex = 1;
             renderCurrentQuestion();
@@ -462,24 +471,37 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
             // 1. Ebook, PDF, or template chosen in Q1
             if (q1 === 'A') {
                 revealEbookPath();
+                if (typeof fbq === 'function') {
+                    fbq('trackCustom', 'QuizDisqualified', { reason: 'Ebook_or_Template', product_format: q1 });
+                }
                 return;
             }
 
             // 2. No finished product yet chosen in Q1
             if (q1 === 'D') {
                 revealBeginnerPath();
+                if (typeof fbq === 'function') {
+                    fbq('trackCustom', 'QuizDisqualified', { reason: 'No_Product', product_format: q1 });
+                }
                 return;
             }
 
-            // 3. Valid product, but ad budget is under ₦100,000 (A or B in Q2)
-            if (['A', 'B'].includes(q2)) {
+            // 3. Low ad budget (Option A in Q2: "I don't have much to spend on ads right now")
+            if (q2 === 'A') {
                 revealBudgetPath();
+                if (typeof fbq === 'function') {
+                    fbq('trackCustom', 'QuizDisqualified', { reason: 'Low_Budget', budget: q2 });
+                }
                 return;
             }
 
-            // 4. Fully qualified: Video Course / Cohort / Coaching (B or C) AND ₦100,000+ ad budget (C or D in Q2)
-            if (['B', 'C'].includes(q1) && ['C', 'D'].includes(q2)) {
+            // 4. Fully qualified: Video Course / Cohort / Coaching (B or C) AND ₦50,000+ ad budget (B, C, or D in Q2)
+            if (['B', 'C'].includes(q1) && ['B', 'C', 'D'].includes(q2)) {
                 revealForm();
+                if (typeof fbq === 'function') {
+                    fbq('track', 'ViewContent', { content_name: 'Lead Application Form', content_category: 'Qualified Lead' });
+                    fbq('trackCustom', 'QuizQualified', { product_format: q1, budget: q2 });
+                }
             }
         }
 
