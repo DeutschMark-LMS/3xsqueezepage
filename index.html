@@ -152,7 +152,7 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
             
             <!-- Qualification seed -->
             <p class="text-base md:text-lg text-slate-600 font-medium max-w-2xl mx-auto mb-10 leading-relaxed">
-                Answer <strong class="text-slate-900">2 quick questions - takes under a minute</strong> to see if this training is right for you. If you are a fit, you will unlock the free training that helps you achieve <strong class="text-dmPurple">3x return</strong> on ad spend consistently.
+                Answer <strong class="text-slate-900">1 quick question - takes under 10 seconds</strong> to see if this training is right for you. If you are a fit, you will unlock the free training that helps you achieve <strong class="text-dmPurple">3x return</strong> on ad spend consistently.
             </p>
                 <!-- Live attendance bonus: make the reason to attend both days tangible before qualification -->
                 <section id="liveGifts" class="hidden max-w-4xl mx-auto mt-10 mb-12 text-left rounded-2xl border border-purple-100 bg-slate-50 px-4 py-8 shadow-sm md:px-8 md:py-10" aria-labelledby="live-gifts-heading">
@@ -203,8 +203,8 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
 
                 <div id="questionProgress" class="mb-8 text-left">
                     <div class="flex items-center justify-between mb-2 text-xs font-bold uppercase tracking-wide text-slate-500">
-                        <span>Progress</span>
-                        <span>Question <span id="progressNumber">0</span> of 2</span>
+                        <span>Quick Qualification</span>
+                        <span>Question <span id="progressNumber">0</span> of 1</span>
                     </div>
                     <div class="h-1.5 bg-slate-200 rounded-full overflow-hidden">
                         <div id="progressBar" class="h-full bg-dmPurple rounded-full transition-all duration-500" style="width: 0%"></div>
@@ -214,7 +214,7 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                 <div id="answerPanel">
                     <div class="space-y-6">
                         <div id="questionStep1" class="question-step text-left">
-                            <h3 class="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3">Question 1</h3>
+                            <h3 class="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3">Quick Question</h3>
                             <p class="text-lg md:text-xl text-slate-800 mb-4 font-bold leading-snug">What format is the digital product you are currently trying to scale with ads?</p>
                             <div class="flex flex-col gap-3" data-question="q1">
                                 <button type="button" aria-pressed="false" class="answer-btn flex w-full items-start gap-3 bg-white text-left hover:bg-purple-50 text-gray-700 border border-purple-200 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="A" onclick="selectAnswer('q1', 'A')"><span class="option-check mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-purple-300 bg-white text-transparent transition">✓</span><span>An Ebook, PDF guide, or digital template</span></button>
@@ -222,23 +222,7 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                                 <button type="button" aria-pressed="false" class="answer-btn flex w-full items-start gap-3 bg-white text-left hover:bg-purple-50 text-gray-700 border border-purple-200 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="C" onclick="selectAnswer('q1', 'C')"><span class="option-check mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-purple-300 bg-white text-transparent transition">✓</span><span>A Live Cohort, Workshop, or Coaching Program</span></button>
                                 <button type="button" aria-pressed="false" class="answer-btn flex w-full items-start gap-3 bg-white text-left hover:bg-purple-50 text-gray-700 border border-purple-200 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="D" onclick="selectAnswer('q1', 'D')"><span class="option-check mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-purple-300 bg-white text-transparent transition">✓</span><span>I don't have a finished digital product yet</span></button>
                             </div>
-                            <button id="nextQuestionBtn" type="button" disabled class="hidden w-full mt-6 bg-purple-700 hover:bg-purple-800 disabled:cursor-not-allowed disabled:opacity-50 text-white font-bold py-4 px-5 rounded-lg transition text-base" onclick="goToNextQuestion()">Next Question</button>
-                        </div>
-
-                        <div id="questionStep2" class="question-step hidden text-left">
-                            <button type="button" class="back-btn inline-flex items-center text-xs font-bold uppercase tracking-wide text-slate-500 hover:text-slate-800 transition" onclick="goBackQuestion()">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                                Back
-                            </button>
-                            <h3 class="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3 mt-4">Question 2</h3>
-                            <p class="text-lg md:text-xl text-slate-800 mb-4 font-bold leading-snug">If accepted into this cohort, how much ad budget do you have ready to deploy using the 3X System?</p>
-                            <div class="flex flex-col gap-3" data-question="q2">
-                                <button type="button" aria-pressed="false" class="answer-btn flex w-full items-start gap-3 bg-white text-left hover:bg-purple-50 text-gray-700 border border-purple-200 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="A" onclick="selectAnswer('q2', 'A')"><span class="option-check mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-purple-300 bg-white text-transparent transition">✓</span><span>I don't have much to spend on ads right now.</span></button>
-                                <button type="button" aria-pressed="false" class="answer-btn flex w-full items-start gap-3 bg-white text-left hover:bg-purple-50 text-gray-700 border border-purple-200 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="B" onclick="selectAnswer('q2', 'B')"><span class="option-check mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-purple-300 bg-white text-transparent transition">✓</span><span>At least ₦50,000</span></button>
-                                <button type="button" aria-pressed="false" class="answer-btn flex w-full items-start gap-3 bg-white text-left hover:bg-purple-50 text-gray-700 border border-purple-200 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="C" onclick="selectAnswer('q2', 'C')"><span class="option-check mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-purple-300 bg-white text-transparent transition">✓</span><span>At least ₦100,000</span></button>
-                                <button type="button" aria-pressed="false" class="answer-btn flex w-full items-start gap-3 bg-white text-left hover:bg-purple-50 text-gray-700 border border-purple-200 font-bold py-3 px-5 rounded-lg transition text-sm" data-value="D" onclick="selectAnswer('q2', 'D')"><span class="option-check mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-purple-300 bg-white text-transparent transition">✓</span><span>₦200,000 or more</span></button>
-                            </div>
-                            <button id="submitAnswersBtn" type="button" disabled class="hidden w-full mt-6 bg-purple-700 hover:bg-purple-800 disabled:cursor-not-allowed disabled:opacity-50 text-white font-bold py-4 px-5 rounded-lg transition text-base" onclick="submitAnswers()">Submit My Answers</button>
+                            <button id="submitAnswersBtn" type="button" disabled class="hidden w-full mt-6 bg-purple-700 hover:bg-purple-800 disabled:cursor-not-allowed disabled:opacity-50 text-white font-bold py-4 px-5 rounded-lg transition text-base" onclick="submitAnswers()">Submit My Answer</button>
                         </div>
                     </div>
                 </div>
@@ -250,7 +234,7 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                     </div>
 
                     <h3 class="font-black text-2xl text-slate-900 mb-2">You’re a fit.</h3>
-                    <p class="text-sm text-slate-600 mb-5 font-medium leading-relaxed">Based on your answers, you match the exact profile this training is built for. You’re eligible for the free invite.</p>
+                    <p class="text-sm text-slate-600 mb-5 font-medium leading-relaxed">Based on your answer, you match the exact profile this training is built for. You’re eligible for the free invite.</p>
 
                     <div class="mb-6 rounded-xl border border-amber-200 bg-amber-50 px-4 py-4 text-center shadow-sm">
                         <p class="text-sm font-black text-slate-900">Before you reserve your seat...</p>
@@ -343,16 +327,14 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
     <!-- Interactive Logic & Conversion Tracking Script -->
     <script>
         const selectedAnswers = {
-            q1: null,
-            q2: null
+            q1: null
         };
 
-        const questionOrder = ['q1', 'q2'];
-        let currentQuestionIndex = 0;
-
-        function updateQuestionProgress(answeredQuestions) {
-            document.getElementById('progressNumber').textContent = answeredQuestions;
-            document.getElementById('progressBar').style.width = `${answeredQuestions / 2 * 100}%`;
+        function updateQuestionProgress(isAnswered) {
+            const progressNumber = document.getElementById('progressNumber');
+            const progressBar = document.getElementById('progressBar');
+            if (progressNumber) progressNumber.textContent = isAnswered ? '1' : '0';
+            if (progressBar) progressBar.style.width = isAnswered ? '100%' : '0%';
         }
 
         function updateAnswerButtonStyles(questionKey, selectedValue) {
@@ -380,48 +362,18 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
         }
 
         function updateSubmitButton() {
-            const answeredCount = Object.values(selectedAnswers).filter(Boolean).length;
-            const nextButton = document.getElementById('nextQuestionBtn');
             const submitBtn = document.getElementById('submitAnswersBtn');
-            const readyToSubmit = answeredCount === 2;
-
-            updateQuestionProgress(answeredCount);
-            nextButton.disabled = !selectedAnswers.q1;
-            nextButton.classList.toggle('hidden', !selectedAnswers.q1);
-            submitBtn.disabled = !selectedAnswers.q2;
-            submitBtn.classList.toggle('hidden', !selectedAnswers.q2);
+            const isAnswered = Boolean(selectedAnswers.q1);
+            if (submitBtn) {
+                submitBtn.disabled = !isAnswered;
+                submitBtn.classList.toggle('hidden', !isAnswered);
+            }
+            updateQuestionProgress(isAnswered);
         }
 
         function renderCurrentQuestion() {
-            questionOrder.forEach((questionKey, index) => {
-                const step = document.getElementById(`questionStep${index + 1}`);
-                if (!step) return;
-                step.classList.toggle('hidden', index !== currentQuestionIndex);
-            });
-
-            const currentStep = document.getElementById(`questionStep${currentQuestionIndex + 1}`);
-            if (currentStep) {
-                currentStep.querySelectorAll('.answer-btn').forEach((button) => {
-                    const questionKey = button.closest('[data-question]')?.dataset.question;
-                    const isSelected = questionKey && selectedAnswers[questionKey] === button.dataset.value;
-                    const checkmark = button.querySelector('.option-check');
-
-                    if (isSelected) {
-                        button.classList.add('bg-purple-600', 'text-white', 'border-purple-700', 'shadow-md');
-                        button.classList.remove('bg-white', 'text-gray-700', 'border-purple-200', 'hover:bg-purple-50');
-                        button.setAttribute('aria-pressed', 'true');
-                        checkmark.classList.add('bg-white', 'border-white', 'text-purple-600');
-                        checkmark.classList.remove('border-purple-300', 'text-transparent');
-                    } else {
-                        button.classList.add('bg-white', 'text-gray-700', 'border-purple-200', 'hover:bg-purple-50');
-                        button.classList.remove('bg-purple-600', 'text-white', 'border-purple-700', 'shadow-md');
-                        button.setAttribute('aria-pressed', 'false');
-                        checkmark.classList.add('border-purple-300', 'text-transparent');
-                        checkmark.classList.remove('bg-white', 'border-white', 'text-purple-600');
-                    }
-                });
-            }
-
+            const step = document.getElementById('questionStep1');
+            if (step) step.classList.remove('hidden');
             updateSubmitButton();
         }
 
@@ -437,36 +389,15 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
             updateSubmitButton();
         }
 
-        function goToNextQuestion() {
-            if (!selectedAnswers.q1) {
-                return;
-            }
-            if (typeof fbq === 'function') {
-                fbq('trackCustom', 'QuizStep1Completed', { format_selected: selectedAnswers.q1 });
-            }
-            currentQuestionIndex = 1;
-            renderCurrentQuestion();
-        }
-
-        function goBackQuestion() {
-            if (currentQuestionIndex > 0) {
-                currentQuestionIndex -= 1;
-                renderCurrentQuestion();
-            }
-        }
-
         function submitAnswers() {
-            const answeredCount = Object.values(selectedAnswers).filter(Boolean).length;
-            if (answeredCount !== 2) {
+            if (!selectedAnswers.q1) {
                 return;
             }
 
             const q1 = selectedAnswers.q1;
-            const q2 = selectedAnswers.q2;
 
             document.getElementById('answerPanel').style.display = 'none';
             document.getElementById('questionProgress').style.display = 'none';
-            updateQuestionProgress(2);
 
             // 1. Ebook, PDF, or template chosen in Q1
             if (q1 === 'A') {
@@ -486,21 +417,12 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                 return;
             }
 
-            // 3. Low ad budget (Option A in Q2: "I don't have much to spend on ads right now")
-            if (q2 === 'A') {
-                revealBudgetPath();
-                if (typeof fbq === 'function') {
-                    fbq('trackCustom', 'QuizDisqualified', { reason: 'Low_Budget', budget: q2 });
-                }
-                return;
-            }
-
-            // 4. Fully qualified: Video Course / Cohort / Coaching (B or C) AND ₦50,000+ ad budget (B, C, or D in Q2)
-            if (['B', 'C'].includes(q1) && ['B', 'C', 'D'].includes(q2)) {
+            // 3. Fully qualified: Video Course or Cohort / Coaching (B or C)
+            if (['B', 'C'].includes(q1)) {
                 revealForm();
                 if (typeof fbq === 'function') {
                     fbq('track', 'ViewContent', { content_name: 'Lead Application Form', content_category: 'Qualified Lead' });
-                    fbq('trackCustom', 'QuizQualified', { product_format: q1, budget: q2 });
+                    fbq('trackCustom', 'QuizQualified', { product_format: q1 });
                 }
             }
         }
