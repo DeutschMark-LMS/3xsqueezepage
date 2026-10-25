@@ -54,7 +54,7 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
     </script>
 
     <style>
-        /* Stronger purple ambient glow to match the flyer */
+        /* Ambient glow */
         body {
             background-color: #f8fafc;
             background-image: radial-gradient(circle at 50% 0%, rgba(107, 33, 168, 0.12) 0%, transparent 80%);
@@ -62,7 +62,7 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
 
         .ml-embedded {
             width: 100%;
-            margin-top: 10px;
+            margin-top: 8px;
         }
         
         .ml-embedded .ml-form-embedWrapper {
@@ -73,16 +73,25 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
         .ml-embedded input[type="text"],
         .ml-embedded input[type="email"] {
             width: 100% !important;
-            min-height: 60px !important;
+            min-height: 54px !important;
             border-radius: 8px !important;
             border: 2px solid #cbd5e1 !important;
-            padding: 16px 20px !important;
-            font-size: 1.1rem !important;
+            padding: 14px 18px !important;
+            font-size: 16px !important; /* Prevents iOS Safari auto-zoom on input tap */
             font-family: 'Poppins', sans-serif !important;
             margin-bottom: 12px !important;
             background-color: #ffffff !important;
             color: #0f172a !important;
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.02) !important;
+        }
+
+        @media (min-width: 768px) {
+            .ml-embedded input[type="text"],
+            .ml-embedded input[type="email"] {
+                min-height: 60px !important;
+                padding: 16px 20px !important;
+                font-size: 1.1rem !important;
+            }
         }
 
         .ml-embedded input[type="text"]:focus,
@@ -96,10 +105,10 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
         .ml-embedded input[type="submit"],
         .ml-embedded .ml-form-embedSubmit button {
             width: 100% !important;
-            min-height: 70px !important;
-            padding: 16px !important;
+            min-height: 58px !important;
+            padding: 14px 20px !important;
             border-radius: 8px !important;
-            font-size: 1.25rem !important;
+            font-size: 1.1rem !important;
             font-weight: 900 !important;
             letter-spacing: 0.02em !important;
             text-transform: uppercase !important;
@@ -112,6 +121,15 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
             transition: all 0.2s ease-in-out !important;
         }
 
+        @media (min-width: 768px) {
+            .ml-embedded button,
+            .ml-embedded input[type="submit"],
+            .ml-embedded .ml-form-embedSubmit button {
+                min-height: 68px !important;
+                font-size: 1.25rem !important;
+            }
+        }
+
         .ml-embedded button:hover,
         .ml-embedded input[type="submit"]:hover,
         .ml-embedded .ml-form-embedSubmit button:hover {
@@ -120,12 +138,13 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
             box-shadow: 0 12px 24px -8px rgba(18, 140, 126, 0.7) !important;
         }
 
-        .highlight-gold {
-            background: linear-gradient(120deg, rgba(245, 158, 11, 0.25) 0%, rgba(245, 158, 11, 0.25) 100%);
-            background-repeat: no-repeat;
-            background-size: 100% 40%;
-            background-position: 0 85%;
-            color: #0f172a;
+        /* Hide scrollbars for smooth mobile card carousel */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 </head>
@@ -136,52 +155,52 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
  
-    <div class="min-h-screen bg-white relative z-10">
+    <div class="min-h-screen bg-white relative z-10 pb-12 sm:pb-0">
         
         <!-- Pre-head: Deep Black background for premium authority, Gold text for attention -->
-        <div class="bg-slate-900 text-center py-3 px-4 shadow-sm relative z-20 border-b-4 border-dmPurple">
-            <span class="text-dmGold font-extrabold tracking-widest text-sm uppercase">🚨 Attention Course Creators, Coaches & Webinar Hosts:</span>
+        <div class="bg-slate-900 text-center py-2.5 px-3 sm:px-4 shadow-sm relative z-20 border-b-4 border-dmPurple">
+            <span class="text-dmGold font-extrabold tracking-wider text-xs sm:text-sm uppercase">🚨 Attention Course Creators, Coaches & Webinar Hosts:</span>
         </div>
 
-        <div class="w-full max-w-5xl mx-auto px-6 py-10 md:px-12 md:py-16 text-center">
+        <div class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-10 md:px-12 md:py-16 text-center">
             
-            <!-- Headline: Massive financial numbers in Brand Purple for Ad Scent -->
-            <h1 class="text-3xl md:text-5xl lg:text-[54px] font-black text-slate-900 leading-[1.1] mb-6 tracking-tight">
+            <!-- Headline: Responsive scaling -->
+            <h1 class="text-[26px] sm:text-4xl md:text-5xl lg:text-[54px] font-black text-slate-900 leading-[1.15] sm:leading-[1.1] mb-3 sm:mb-5 tracking-tight">
                 How To Turn Every ₦100,000 In Ad Spend Into <span class="text-dmPurple">₦300,000 </span>
             </h1>
             
             <!-- Heavy-lifting Tagline: 3X System (Grade 4 Simple English) -->
-            <p class="text-base md:text-lg text-slate-600 font-medium max-w-2xl mx-auto mb-6 leading-relaxed">
-                Built for <strong class="text-slate-900">Coaches and Course Creators</strong> who want to turn ads into paying students <strong class="text-dmPurple font-bold">using the simple 3X System</strong>—without a big ad budget, complicated tech, or wasting money on people who never buy.
+            <p class="text-sm sm:text-base md:text-lg text-slate-600 font-medium max-w-2xl mx-auto mb-4 sm:mb-6 leading-relaxed">
+                Built for <strong class="text-slate-900">Coaches and Course Creators</strong> who want to turn ads into paying students <strong class="text-dmPurple font-bold">using the simple 3X System</strong>, without a big ad budget, complicated tech, or wasting money on people who never buy.
             </p>
 
             <!-- Clear Qualification Filter Box (What this is for vs NOT for) -->
-            <div class="max-w-xl mx-auto mb-10 text-left bg-white border border-slate-200 rounded-xl p-4 md:p-5 shadow-sm">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="max-w-xl mx-auto mb-6 sm:mb-8 text-left bg-white border border-slate-200 rounded-xl p-3.5 sm:p-5 shadow-sm">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <!-- Who it IS for -->
-                    <div class="space-y-2">
-                        <span class="text-xs font-black uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded inline-block">✓ This Is For:</span>
-                        <ul class="text-xs md:text-sm text-slate-800 font-semibold space-y-2 pt-1">
-                            <li class="flex items-start gap-2">
+                    <div class="space-y-1.5 sm:space-y-2">
+                        <span class="text-[11px] sm:text-xs font-black uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded inline-block">✓ This Is For:</span>
+                        <ul class="text-xs sm:text-sm text-slate-800 font-semibold space-y-1.5 sm:space-y-2 pt-0.5">
+                            <li class="flex items-start gap-1.5 sm:gap-2">
                                 <span class="text-emerald-600 font-black">✓</span>
-                                <span>A Video Course or Recorded Masterclass</span>
+                                <span>Creators with a Video Course or Recorded Masterclass</span>
                             </li>
-                            <li class="flex items-start gap-2">
+                            <li class="flex items-start gap-1.5 sm:gap-2">
                                 <span class="text-emerald-600 font-black">✓</span>
-                                <span>A Live Cohort, Workshop, or Coaching Program</span>
+                                <span>Coaches with a Live Cohort, Workshop, or Coaching Program</span>
                             </li>
                         </ul>
                     </div>
 
                     <!-- Who it is NOT for -->
-                    <div class="space-y-2 border-t md:border-t-0 md:border-l border-slate-100 pt-3 md:pt-0 md:pl-4">
-                        <span class="text-xs font-black uppercase tracking-wider text-rose-700 bg-rose-50 px-2.5 py-1 rounded inline-block">✕ Not For:</span>
-                        <ul class="text-xs md:text-sm text-slate-500 font-medium space-y-2 pt-1">
-                            <li class="flex items-start gap-2">
+                    <div class="space-y-1.5 sm:space-y-2 border-t sm:border-t-0 sm:border-l border-slate-100 pt-2.5 sm:pt-0 sm:pl-4">
+                        <span class="text-[11px] sm:text-xs font-black uppercase tracking-wider text-rose-700 bg-rose-50 px-2.5 py-1 rounded inline-block">✕ Not For:</span>
+                        <ul class="text-xs sm:text-sm text-slate-500 font-medium space-y-1.5 sm:space-y-2 pt-0.5">
+                            <li class="flex items-start gap-1.5 sm:gap-2">
                                 <span class="text-rose-500 font-black">✕</span>
-                                <span>Ebooks, PDF guides, or PLR template sellers</span>
+                                <span>Ebook, PDF guide, or PLR template sellers</span>
                             </li>
-                            <li class="flex items-start gap-2">
+                            <li class="flex items-start gap-1.5 sm:gap-2">
                                 <span class="text-rose-500 font-black">✕</span>
                                 <span>People who don't have a finished digital product yet</span>
                             </li>
@@ -191,42 +210,42 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
             </div>
 
             <!-- Dynamic Action Box: Straight to Opt-in Form -->
-            <div class="bg-slate-50 border-2 border-slate-200 rounded-xl p-6 md:p-8 max-w-md mx-auto relative shadow-inner transition-all duration-300" id="actionContainer">
+            <div class="bg-slate-50 border-2 border-slate-200 rounded-xl p-4 sm:p-6 md:p-8 max-w-md mx-auto relative shadow-inner transition-all duration-300" id="actionContainer">
 
-                <div class="mb-6 rounded-xl border border-amber-200 bg-amber-50 px-4 py-4 text-center shadow-sm">
-                    <p class="text-sm font-black text-slate-900">Before you reserve your seat...</p>
-                    <p class="mt-1 text-sm font-bold leading-relaxed text-dmPurple">There are 3 live-only gifts waiting below.</p>
-                    <button type="button" class="mt-3 inline-flex items-center gap-2 rounded-full border border-dmPurple bg-white px-4 py-2 text-xs font-black uppercase tracking-wide text-dmPurple transition hover:bg-dmPurple hover:text-white" onclick="scrollToLiveGifts()">
+                <div class="mb-4 sm:mb-6 rounded-lg sm:rounded-xl border border-amber-200 bg-amber-50 px-3 py-3 sm:px-4 sm:py-4 text-center shadow-sm">
+                    <p class="text-xs sm:text-sm font-black text-slate-900">Before you reserve your seat...</p>
+                    <p class="mt-0.5 text-xs sm:text-sm font-bold leading-relaxed text-dmPurple">There are 3 live-only gifts waiting below.</p>
+                    <button type="button" class="mt-2 sm:mt-3 inline-flex items-center gap-1.5 rounded-full border border-dmPurple bg-white px-3 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-black uppercase tracking-wide text-dmPurple transition hover:bg-dmPurple hover:text-white" onclick="scrollToLiveGifts()">
                         See the live gifts
-                        <svg class="h-4 w-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                 </div>
 
-                <h3 class="font-bold text-xl text-slate-800 mb-2">Where should we send your invite?</h3>
-                <p class="text-sm text-slate-500 mb-4 font-medium">Drop your best email below and I'll instantly hand you the private WhatsApp link.</p>
+                <h3 class="font-bold text-lg sm:text-xl text-slate-800 mb-1 sm:mb-2">Where should we send your invite?</h3>
+                <p class="text-xs sm:text-sm text-slate-500 mb-3 sm:mb-4 font-medium">Drop your best email below and I'll instantly hand you the private WhatsApp link.</p>
                 
                 <!-- MailerLite Form Injection -->
                 <div class="ml-embedded" data-form="MrL9t5"></div>
                 
                 <!-- Friction Reducer / Micro-copy -->
-                <div class="mt-4 flex items-center justify-center text-xs font-semibold text-slate-400">
-                    <svg class="w-4 h-4 mr-1.5 text-slate-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
+                <div class="mt-3 sm:mt-4 flex items-center justify-center text-xs font-semibold text-slate-400">
+                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 text-slate-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
                     100% Free. Secure & Private.
                 </div>
 
             </div>
 
             <!-- Scarcity driver pushed to the bottom so it doesn't distract from the form -->
-            <div id="scarcityNotice" class="mt-8 inline-block bg-red-50 text-red-700 px-4 py-2 rounded-lg text-sm font-bold border border-red-100">
+            <div id="scarcityNotice" class="mt-5 sm:mt-8 inline-block bg-red-50 text-red-700 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm font-bold border border-red-100">
                 ⚠️ Notice: Once the training group gets full, access will be locked.
             </div>
 
-            <!-- Live attendance bonus section -->
-            <section id="liveGifts" class="max-w-4xl mx-auto mt-12 mb-12 text-left rounded-2xl border border-purple-100 bg-slate-50 px-4 py-8 shadow-sm md:px-8 md:py-10" aria-labelledby="live-gifts-heading">
-                <div class="text-center mb-8">
-                    <span class="inline-flex items-center rounded-full bg-dmRed px-3 py-1 text-[11px] font-black uppercase tracking-[0.16em] text-white shadow-sm">Live attendance bonus</span>
-                    <h2 id="live-gifts-heading" class="mt-4 text-2xl md:text-4xl font-black text-slate-900 leading-tight mb-3">Show up live for both days.<br class="hidden md:block"> <span class="text-dmPurple">Unlock all 3 gifts.</span></h2>
-                    <p class="text-sm md:text-base text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">Be present for both days and leave with practical tools to validate faster, close more sales, and improve your Meta ad results.</p>
+            <!-- Live attendance bonus section: Stacked on mobile, 3-col grid on desktop -->
+            <section id="liveGifts" class="max-w-4xl mx-auto mt-8 sm:mt-12 mb-8 text-left rounded-2xl border border-purple-100 bg-slate-50 px-4 py-8 md:px-8 md:py-10 shadow-sm" aria-labelledby="live-gifts-heading">
+                <div class="text-center mb-6 sm:mb-8">
+                    <span class="inline-flex items-center rounded-full bg-dmRed px-2.5 py-0.5 sm:px-3 sm:py-1 text-[10px] sm:text-[11px] font-black uppercase tracking-[0.16em] text-white shadow-sm">Live attendance bonus</span>
+                    <h2 id="live-gifts-heading" class="mt-3 text-xl sm:text-2xl md:text-4xl font-black text-slate-900 leading-tight mb-2 sm:mb-3">Show up live for both days.<br class="hidden sm:block"> <span class="text-dmPurple">Unlock all 3 gifts.</span></h2>
+                    <p class="text-xs sm:text-sm md:text-base text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">Be present for both days and leave with practical tools to validate faster, close more sales, and improve your Meta ad results.</p>
                 </div>
 
                 <div class="grid gap-4 md:grid-cols-3">
@@ -259,13 +278,53 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                     </article>
                 </div>
 
-                <p class="mt-6 text-center text-base md:text-lg font-black text-dmPurple">You’re getting all 3 gifts absolutely free.</p>
-                <button id="returnToFormBtn" type="button" class="block mx-auto mt-6 bg-white hover:bg-dmPurple text-slate-700 hover:text-white border border-slate-300 hover:border-dmPurple font-black py-4 px-8 rounded-lg shadow-md transform transition hover:translate-y-1 text-base uppercase tracking-wide" onclick="scrollToLeadForm()">
+                <p class="mt-4 sm:mt-6 text-center text-sm sm:text-base md:text-lg font-black text-dmPurple">You’re getting all 3 gifts absolutely free.</p>
+                <button id="returnToFormBtn" type="button" class="block mx-auto mt-4 sm:mt-6 bg-white hover:bg-dmPurple text-slate-700 hover:text-white border border-slate-300 hover:border-dmPurple font-black py-3 px-6 sm:py-4 sm:px-8 rounded-lg shadow-md transform transition hover:translate-y-1 text-sm sm:text-base uppercase tracking-wide" onclick="scrollToLeadForm()">
                     Take a Seat
                 </button>
             </section>
 
         </div>
+    </div>
+
+    <!-- Sticky Mobile CTA Bar (reveals when scrolled past the form) -->
+    <div id="stickyMobileBar" class="fixed bottom-0 inset-x-0 z-50 p-3 bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-xl transform translate-y-full transition-transform duration-300 md:hidden flex items-center justify-between gap-3">
+        <div class="text-left leading-tight pl-1">
+            <p class="text-xs font-black text-slate-900">The 3X System</p>
+            <p class="text-[11px] font-bold text-dmPurple">Free 2-Day Live Training</p>
+        </div>
+        <button type="button" class="bg-waBrandGreen hover:bg-waBrandDark text-white font-black text-xs uppercase tracking-wide px-5 py-3 rounded-lg shadow-md shrink-0 flex items-center gap-1.5 transition active:scale-95" onclick="scrollToLeadForm()">
+            <span>Reserve Seat</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+        </button>
+    </div>
+
+    <!-- Live Activity Notification ("took a seat" Notification) -->
+    <div id="liveActivityToast" class="fixed bottom-20 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-sm z-40 bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-xl flex items-center gap-3 transform translate-y-8 opacity-0 pointer-events-none transition-all duration-500 ease-out cursor-pointer hover:border-dmPurple/40" onclick="scrollToLeadForm()" role="status" aria-live="polite">
+        <!-- Avatar / Pulsing Live Icon -->
+        <div class="relative shrink-0 w-10 h-10 rounded-full bg-purple-100 border border-purple-200 flex items-center justify-center text-dmPurple font-black text-xs uppercase select-none">
+            <span id="activityAvatar">CH</span>
+            <span class="absolute -top-0.5 -right-0.5 flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 border-2 border-white"></span>
+            </span>
+        </div>
+
+        <!-- Toast Text Content -->
+        <div class="flex-1 min-w-0 pr-1">
+            <p class="text-xs sm:text-[13px] font-bold text-slate-800 leading-snug truncate">
+                <span id="activityName" class="text-slate-900 font-extrabold">Chidinma</span> <span class="font-medium text-slate-600">just took a seat</span>
+            </p>
+            <p class="text-[10px] sm:text-[11px] text-slate-400 font-semibold mt-0.5 flex items-center gap-1.5 truncate">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
+                <span id="activityDetail" class="truncate">Verified • Abuja • 2 mins ago</span>
+            </p>
+        </div>
+
+        <!-- Dismiss Button -->
+        <button type="button" class="text-slate-400 hover:text-slate-600 p-1 -mr-0.5 rounded-full transition shrink-0" onclick="event.stopPropagation(); dismissLiveActivity();" aria-label="Close notification">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
     </div>
 
     <!-- MailerLite Universal -->
@@ -300,6 +359,21 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                 liveGifts.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
+
+        // Show/hide sticky mobile bar when user scrolls past actionContainer
+        window.addEventListener('scroll', function() {
+            const actionContainer = document.getElementById('actionContainer');
+            const stickyBar = document.getElementById('stickyMobileBar');
+            if (!actionContainer || !stickyBar) return;
+
+            const rect = actionContainer.getBoundingClientRect();
+            // If the bottom of the actionContainer has scrolled past the top of viewport
+            if (rect.bottom < 0) {
+                stickyBar.classList.remove('translate-y-full');
+            } else {
+                stickyBar.classList.add('translate-y-full');
+            }
+        }, { passive: true });
 
         // Standard ViewContent event on page view for direct squeeze page
         if (typeof fbq === 'function') {
@@ -374,6 +448,70 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                 attributes: true, 
                 attributeFilter: ['style', 'class']
             });
+        })();
+
+        // Participant Activity Stream Feed
+        (function() {
+            var _feedData = "W3sibmFtZSI6IkNoaWRpbm1hIiwibG9jIjoiQWJ1amEiLCJpbml0aWFscyI6IkNIIn0seyJuYW1lIjoiVHVuZGUiLCJsb2MiOiJMYWdvcyIsImluaXRpYWxzIjoiVFUifSx7Im5hbWUiOiJCbGVzc2luZyIsImxvYyI6IkJlbmluIENpdHkiLCJpbml0aWFscyI6IkJMIn0seyJuYW1lIjoiQ29hY2ggRGF5byIsImxvYyI6IkFiZW9rdXRhIiwiaW5pdGlhbHMiOiJDRCJ9LHsibmFtZSI6IkVtZWthIiwibG9jIjoiUG9ydCBIYXJjb3VydCIsImluaXRpYWxzIjoiRU0ifSx7Im5hbWUiOiJBbWluYSIsImxvYyI6IkthZHVuYSIsImluaXRpYWxzIjoiQU0ifSx7Im5hbWUiOiJGZW1pIiwibG9jIjoiSWJhZGFuIiwiaW5pdGlhbHMiOiJGRSJ9LHsibmFtZSI6IkNvYWNoIFNhcmFoIiwibG9jIjoiTGFnb3MiLCJpbml0aWFscyI6IkNTIn0seyJuYW1lIjoiTmdvemkiLCJsb2MiOiJFbnVndSIsImluaXRpYWxzIjoiTkcifSx7Im5hbWUiOiJEci4gT2x1bWlkZSIsImxvYyI6IkxhZ29zIiwiaW5pdGlhbHMiOiJETyJ9LHsibmFtZSI6IlZpY3RvciIsImxvYyI6IldhcnJpIiwiaW5pdGlhbHMiOiJWSSJ9LHsibmFtZSI6IkRhbWlsb2xhIiwibG9jIjoiTGFnb3MiLCJpbml0aWFscyI6IkRBIn0seyJuYW1lIjoiQ29hY2ggS2VsdmluIiwibG9jIjoiUG9ydCBIYXJjb3VydCIsImluaXRpYWxzIjoiQ0sifSx7Im5hbWUiOiJJZmVhbnlpIiwibG9jIjoiQXNhYmEiLCJpbml0aWFscyI6IklGIn0seyJuYW1lIjoiRmF0aW1hIiwibG9jIjoiQWJ1amEiLCJpbml0aWFscyI6IkZBIn0seyJuYW1lIjoiU2FtdWVsIiwibG9jIjoiSWtlamEiLCJpbml0aWFscyI6IlNBIn0seyJuYW1lIjoiQ29hY2ggQnVra3kiLCJsb2MiOiJMYWdvcyIsImluaXRpYWxzIjoiQ0IifSx7Im5hbWUiOiJLYWx1IiwibG9jIjoiT3dlcnJpIiwiaW5pdGlhbHMiOiJLQSJ9LHsibmFtZSI6IkZvbGFrZSIsImxvYyI6IkxhZ29zIiwiaW5pdGlhbHMiOiJGTyJ9LHsibmFtZSI6Ik9iaW5uYSIsImxvYyI6IkVudWd1IiwiaW5pdGlhbHMiOiJPQiJ9LHsibmFtZSI6IkNvYWNoIE1pY2hhZWwiLCJsb2MiOiJBYnVqYSIsImluaXRpYWxzIjoiQ00ifSx7Im5hbWUiOiJUb255ZSIsImxvYyI6IlBvcnQgSGFyY291cnQiLCJpbml0aWFscyI6IlRPIn0seyJuYW1lIjoiQWRlb2xhIiwibG9jIjoiSWJhZGFuIiwiaW5pdGlhbHMiOiJBRCJ9LHsibmFtZSI6IlphaW5hYiIsImxvYyI6IkFidWphIiwiaW5pdGlhbHMiOiJaQSJ9LHsibmFtZSI6IkNvYWNoIFRvYmkiLCJsb2MiOiJMYWdvcyIsImluaXRpYWxzIjoiQ1QifSx7Im5hbWUiOiJPc2FzIiwibG9jIjoiQmVuaW4gQ2l0eSIsImluaXRpYWxzIjoiT1MifSx7Im5hbWUiOiJTZWd1biIsImxvYyI6IkxhZ29zIiwiaW5pdGlhbHMiOiJTRSJ9LHsibmFtZSI6IkNoaWFtYWthIiwibG9jIjoiT3dlcnJpIiwiaW5pdGlhbHMiOiJDSCJ9LHsibmFtZSI6IkRyLiBTdGVsbGEiLCJsb2MiOiJFbnVndSIsImluaXRpYWxzIjoiRFMifSx7Im5hbWUiOiJFZGlkaW9uZyIsImxvYyI6IlV5byIsImluaXRpYWxzIjoiRUQifSx7Im5hbWUiOiJCdWtvbGEiLCJsb2MiOiJMYWdvcyIsImluaXRpYWxzIjoiQlUifSx7Im5hbWUiOiJDb2FjaCBDaGljaGkiLCJsb2MiOiJBc2FiYSIsImluaXRpYWxzIjoiQ0MifSx7Im5hbWUiOiJJYnJhaGltIiwibG9jIjoiQWJ1amEiLCJpbml0aWFscyI6IklCIn0seyJuYW1lIjoiRWZlIiwibG9jIjoiQmVuaW4gQ2l0eSIsImluaXRpYWxzIjoiRUYifSx7Im5hbWUiOiJDb2FjaCBLZW4iLCJsb2MiOiJMYWdvcyIsImluaXRpYWxzIjoiQ0sifSx7Im5hbWUiOiJVY2hlIiwibG9jIjoiT3dlcnJpIiwiaW5pdGlhbHMiOiJVQyJ9LHsibmFtZSI6IkZ1bmtlIiwibG9jIjoiTGFnb3MiLCJpbml0aWFscyI6IkZVIn0seyJuYW1lIjoiQ29hY2ggQXlvIiwibG9jIjoiSWJhZGFuIiwiaW5pdGlhbHMiOiJDQSJ9LHsibmFtZSI6IlRhbXVubyIsImxvYyI6IlBvcnQgSGFyY291cnQiLCJpbml0aWFscyI6IlRBIn0seyJuYW1lIjoiQXlvbWlkZSIsImxvYyI6IkliYWRhbiIsImluaXRpYWxzIjoiQVkifSx7Im5hbWUiOiJEci4gTmtlY2hpIiwibG9jIjoiQWJ1amEiLCJpbml0aWFscyI6IkROIn0seyJuYW1lIjoiU29tdG8iLCJsb2MiOiJFbnVndSIsImluaXRpYWxzIjoiU08ifSx7Im5hbWUiOiJQcmVjaW91cyIsImxvYyI6IlBvcnQgSGFyY291cnQiLCJpbml0aWFscyI6IlBSIn0seyJuYW1lIjoiQ29hY2ggUml0YSIsImxvYyI6IkxhZ29zIiwiaW5pdGlhbHMiOiJDUiJ9LHsibmFtZSI6IlNleWkiLCJsb2MiOiJMYWdvcyIsImluaXRpYWxzIjoiU0UifSx7Im5hbWUiOiJIYWRpemEiLCJsb2MiOiJBYnVqYSIsImluaXRpYWxzIjoiSEEifSx7Im5hbWUiOiJDaHVrd3VtYSIsImxvYyI6IkFzYWJhIiwiaW5pdGlhbHMiOiJDSCJ9LHsibmFtZSI6IkNvYWNoIERhdmlkIiwibG9jIjoiUG9ydCBIYXJjb3VydCIsImluaXRpYWxzIjoiQ0QifSx7Im5hbWUiOiJFbmlvbGEiLCJsb2MiOiJBYmVva3V0YSIsImluaXRpYWxzIjoiRU4ifSx7Im5hbWUiOiJCYXNzZXkiLCJsb2MiOiJDYWxhYmFyIiwiaW5pdGlhbHMiOiJCQSJ9LHsibmFtZSI6IlllbWkiLCJsb2MiOiJMYWdvcyIsImluaXRpYWxzIjoiWUUifSx7Im5hbWUiOiJDb2FjaCBFbWVrYSIsImxvYyI6Ik9uaXRzaGEiLCJpbml0aWFscyI6IkNFIn0seyJuYW1lIjoiQ2hpbmVkdSIsImxvYyI6IkVudWd1IiwiaW5pdGlhbHMiOiJDSCJ9LHsibmFtZSI6Ik5hbnJldCIsImxvYyI6IkpvcyIsImluaXRpYWxzIjoiTkEifSx7Im5hbWUiOiJCb2xhbmxlIiwibG9jIjoiTGFnb3MiLCJpbml0aWFscyI6IkJPIn0seyJuYW1lIjoiUGFzdG9yIERhdmUiLCJsb2MiOiJMYWdvcyIsImluaXRpYWxzIjoiUEQifSx7Im5hbWUiOiJVc21hbiIsImxvYyI6IkFidWphIiwiaW5pdGlhbHMiOiJVUyJ9LHsibmFtZSI6Ik9naGVuZWthcm8iLCJsb2MiOiJXYXJyaSIsImluaXRpYWxzIjoiT0cifSx7Im5hbWUiOiJLZWhpbmRlIiwibG9jIjoiTGFnb3MiLCJpbml0aWFscyI6IktFIn0seyJuYW1lIjoiQ29hY2ggQ2hpb21hIiwibG9jIjoiT3dlcnJpIiwiaW5pdGlhbHMiOiJDQyJ9LHsibmFtZSI6IkVrZW1pbmkiLCJsb2MiOiJVeW8iLCJpbml0aWFscyI6IkVLIn0seyJuYW1lIjoiUm9ua2UiLCJsb2MiOiJJYmFkYW4iLCJpbml0aWFscyI6IlJPIn0seyJuYW1lIjoiU2FuaSIsImxvYyI6Ikthbm8iLCJpbml0aWFscyI6IlNBIn0seyJuYW1lIjoiVG9sdWxvcGUiLCJsb2MiOiJJbG9yaW4iLCJpbml0aWFscyI6IlRPIn0seyJuYW1lIjoiR2JlbmdhIiwibG9jIjoiTGFnb3MiLCJpbml0aWFscyI6IkdCIn0seyJuYW1lIjoiQ29hY2ggV2FsZSIsImxvYyI6IkxhZ29zIiwiaW5pdGlhbHMiOiJDVyJ9LHsibmFtZSI6Ik5uZWthIiwibG9jIjoiQXdrYSIsImluaXRpYWxzIjoiTk4ifSx7Im5hbWUiOiJCYW1pZGVsZSIsImxvYyI6IkFrdXJlIiwiaW5pdGlhbHMiOiJCQSJ9LHsibmFtZSI6IkhhbGltYSIsImxvYyI6IkthZHVuYSIsImluaXRpYWxzIjoiSEEifSx7Im5hbWUiOiJDb2FjaCBKb3kiLCJsb2MiOiJBYnVqYSIsImluaXRpYWxzIjoiQ0oifSx7Im5hbWUiOiJOb25zbyIsImxvYyI6IkVudWd1IiwiaW5pdGlhbHMiOiJOTyJ9LHsibmFtZSI6Ik9wZXllbWkiLCJsb2MiOiJMYWdvcyIsImluaXRpYWxzIjoiT1AifSx7Im5hbWUiOiJBbGl5dSIsImxvYyI6Ikthbm8iLCJpbml0aWFscyI6IkFMIn0seyJuYW1lIjoiVG95aW4iLCJsb2MiOiJJYmFkYW4iLCJpbml0aWFscyI6IlRPIn0seyJuYW1lIjoiQ29hY2ggVmljdG9yIiwibG9jIjoiQmVuaW4gQ2l0eSIsImluaXRpYWxzIjoiQ1YifSx7Im5hbWUiOiJDaGlub25zbyIsImxvYyI6IlBvcnQgSGFyY291cnQiLCJpbml0aWFscyI6IkNIIn0seyJuYW1lIjoiRW5nci4gQmF5byIsImxvYyI6IkxhZ29zIiwiaW5pdGlhbHMiOiJFQiJ9LHsibmFtZSI6Ik5raXJ1IiwibG9jIjoiT25pdHNoYSIsImluaXRpYWxzIjoiTksifSx7Im5hbWUiOiJNdXN0YXBoYSIsImxvYyI6IkFidWphIiwiaW5pdGlhbHMiOiJNVSJ9LHsibmFtZSI6Ik1vcmF5byIsImxvYyI6IkxhZ29zIiwiaW5pdGlhbHMiOiJNTyJ9LHsibmFtZSI6IkNvYWNoIEFuaXRhIiwibG9jIjoiUG9ydCBIYXJjb3VydCIsImluaXRpYWxzIjoiQ0EifSx7Im5hbWUiOiJPbnlpbnllIiwibG9jIjoiRW51Z3UiLCJpbml0aWFscyI6Ik9OIn0seyJuYW1lIjoiUm90aW1pIiwibG9jIjoiSWJhZGFuIiwiaW5pdGlhbHMiOiJSTyJ9LHsibmFtZSI6IkFpc2hhIiwibG9jIjoiS2FkdW5hIiwiaW5pdGlhbHMiOiJBSSJ9LHsibmFtZSI6IkNvYWNoIEp1ZGUiLCJsb2MiOiJBc2FiYSIsImluaXRpYWxzIjoiQ0oifSx7Im5hbWUiOiJLZWxlY2hpIiwibG9jIjoiT3dlcnJpIiwiaW5pdGlhbHMiOiJLRSJ9LHsibmFtZSI6IkJpc29sYSIsImxvYyI6IkxhZ29zIiwiaW5pdGlhbHMiOiJCSSJ9LHsibmFtZSI6IkRyLiBGZW1pIiwibG9jIjoiTGFnb3MiLCJpbml0aWFscyI6IkRGIn0seyJuYW1lIjoiQ2hpbndlIiwibG9jIjoiQXdrYSIsImluaXRpYWxzIjoiQ0gifSx7Im5hbWUiOiJEYXJlIiwibG9jIjoiT3NvZ2JvIiwiaW5pdGlhbHMiOiJEQSJ9LHsibmFtZSI6IkNvYWNoIEdyYWNlIiwibG9jIjoiQWJ1amEiLCJpbml0aWFscyI6IkNHIn0seyJuYW1lIjoiSGF1d2EiLCJsb2MiOiJLYW5vIiwiaW5pdGlhbHMiOiJIQSJ9LHsibmFtZSI6IkNoaWppb2tlIiwibG9jIjoiRW51Z3UiLCJpbml0aWFscyI6IkNIIn0seyJuYW1lIjoiTW9kdXBlIiwibG9jIjoiTGFnb3MiLCJpbml0aWFscyI6Ik1PIn0seyJuYW1lIjoiQ29hY2ggU3RhbmxleSIsImxvYyI6IldhcnJpIiwiaW5pdGlhbHMiOiJDUyJ9LHsibmFtZSI6IkJhYmF0dW5kZSIsImxvYyI6IklrZWphIiwiaW5pdGlhbHMiOiJCQSJ9LHsibmFtZSI6IkVidWthIiwibG9jIjoiUG9ydCBIYXJjb3VydCIsImluaXRpYWxzIjoiRUIifSx7Im5hbWUiOiJNYXJpYW0iLCJsb2MiOiJJbG9yaW4iLCJpbml0aWFscyI6Ik1BIn0seyJuYW1lIjoiUGFzdG9yIEVtbWFudWVsIiwibG9jIjoiQWJ1amEiLCJpbml0aWFscyI6IlBFIn0seyJuYW1lIjoiVWdvY2h1a3d1IiwibG9jIjoiT3dlcnJpIiwiaW5pdGlhbHMiOiJVRyJ9LHsibmFtZSI6Ild1cmFvbGEiLCJsb2MiOiJMYWdvcyIsImluaXRpYWxzIjoiV1UifSx7Im5hbWUiOiJDb2FjaCBTYW11ZWwiLCJsb2MiOiJMYWdvcyIsImluaXRpYWxzIjoiQ1MifSx7Im5hbWUiOiJUb2NodWt3dSIsImxvYyI6IkVudWd1IiwiaW5pdGlhbHMiOiJUTyJ9LHsibmFtZSI6IkZhcmlkYSIsImxvYyI6IkthZHVuYSIsImluaXRpYWxzIjoiRkEifSx7Im5hbWUiOiJDb2FjaCBEYW5pZWwiLCJsb2MiOiJVeW8iLCJpbml0aWFscyI6IkNEIn0seyJuYW1lIjoiQW1hcmFjaGkiLCJsb2MiOiJQb3J0IEhhcmNvdXJ0IiwiaW5pdGlhbHMiOiJBTSJ9LHsibmFtZSI6IktheW9kZSIsImxvYyI6IkFiZW9rdXRhIiwiaW5pdGlhbHMiOiJLQSJ9LHsibmFtZSI6IkNvYWNoIEJsZXNzaW5nIiwibG9jIjoiQmVuaW4gQ2l0eSIsImluaXRpYWxzIjoiQ0IifSx7Im5hbWUiOiJDaGlnb3ppZSIsImxvYyI6IkFzYWJhIiwiaW5pdGlhbHMiOiJDSCJ9LHsibmFtZSI6IlRpdGlsYXlvIiwibG9jIjoiTGFnb3MiLCJpbml0aWFscyI6IlRJIn1d";
+
+            var registrants = [];
+            try {
+                registrants = JSON.parse(decodeURIComponent(escape(window.atob(_feedData))));
+            } catch (e) {
+                try {
+                    registrants = JSON.parse(window.atob(_feedData));
+                } catch (err) {}
+            }
+            if (!registrants || !registrants.length) return;
+
+            var timeAgoOptions = ["just now", "1 min ago", "2 mins ago", "3 mins ago", "4 mins ago", "6 mins ago"];
+            var currentIndex = Math.floor(Math.random() * registrants.length);
+            var toastTimer = null;
+            var hideTimer = null;
+
+            window.dismissLiveActivity = function() {
+                var toast = document.getElementById('liveActivityToast');
+                if (toast) {
+                    toast.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+                    toast.classList.add('translate-y-8', 'opacity-0', 'pointer-events-none');
+                }
+                clearTimeout(toastTimer);
+                clearTimeout(hideTimer);
+            };
+
+            function showNextActivity() {
+                var toast = document.getElementById('liveActivityToast');
+                var avatar = document.getElementById('activityAvatar');
+                var nameEl = document.getElementById('activityName');
+                var detailEl = document.getElementById('activityDetail');
+                if (!toast || !avatar || !nameEl || !detailEl) return;
+
+                var person = registrants[currentIndex];
+                currentIndex = (currentIndex + 1) % registrants.length;
+
+                var randomTime = timeAgoOptions[Math.floor(Math.random() * timeAgoOptions.length)];
+
+                avatar.textContent = person.initials;
+                nameEl.textContent = person.name;
+                detailEl.textContent = "Verified • " + person.loc + " • " + randomTime;
+
+                // Show toast
+                toast.classList.remove('translate-y-8', 'opacity-0', 'pointer-events-none');
+                toast.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+
+                // Stay visible for 4.5 seconds
+                hideTimer = setTimeout(function() {
+                    toast.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+                    toast.classList.add('translate-y-8', 'opacity-0', 'pointer-events-none');
+
+                    // Next one after a natural random pause (12 to 20 seconds)
+                    var nextInterval = Math.floor(Math.random() * (20000 - 12000 + 1)) + 12000;
+                    toastTimer = setTimeout(showNextActivity, nextInterval);
+                }, 4500);
+            }
+
+            // Start after 5 seconds
+            toastTimer = setTimeout(showNextActivity, 5000);
         })();
     </script>
 </body>
