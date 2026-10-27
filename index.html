@@ -162,6 +162,11 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
             <span class="text-dmGold font-extrabold tracking-wider text-xs sm:text-sm uppercase">🚨 Attention Course Creators, Coaches & Webinar Hosts:</span>
         </div>
 
+        <!-- Personal Invite Notification (Shown only when referred by an attendee) -->
+        <div id="referralBanner" class="hidden bg-emerald-50 border-b border-emerald-200 py-2.5 px-3 sm:px-4 text-center text-xs sm:text-sm font-bold text-emerald-900 relative z-20">
+            <span>✨ You were personally invited by <strong id="referrerNameLabel" class="text-emerald-700 underline decoration-emerald-400"></strong> to reserve a seat for the next cohort</span>
+        </div>
+
         <div class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-10 md:px-12 md:py-16 text-center">
             
             <!-- Headline: Responsive scaling -->
@@ -189,6 +194,10 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                                 <span class="text-emerald-600 font-black">✓</span>
                                 <span>Coaches with a Live Cohort, Workshop, or Coaching Program</span>
                             </li>
+                            <li class="flex items-start gap-1.5 sm:gap-2">
+                                <span class="text-emerald-600 font-black">✓</span>
+                                <span>People who have tried running Meta ads before</span>
+                            </li>
                         </ul>
                     </div>
 
@@ -203,6 +212,10 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                             <li class="flex items-start gap-1.5 sm:gap-2">
                                 <span class="text-rose-500 font-black">✕</span>
                                 <span>People who don't have a finished digital product yet</span>
+                            </li>
+                            <li class="flex items-start gap-1.5 sm:gap-2">
+                                <span class="text-rose-500 font-black">✕</span>
+                                <span>People who have never run Meta ads before</span>
                             </li>
                         </ul>
                     </div>
@@ -403,7 +416,14 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                                 return;
                             } catch (e) {}
                         }
-                        window.location.href = 'https://chat.whatsapp.com/KKbKh1DcTtPL4jRPXfKEhb?s=cl&p=a&mlu=4&ilr=4';
+                        var redirectUrl = 'https://chat.whatsapp.com/KKbKh1DcTtPL4jRPXfKEhb?s=cl&p=a&mlu=4&ilr=4';
+                        try {
+                            var ref = localStorage.getItem('3x_referral_source');
+                            if (ref) {
+                                redirectUrl += '&ref=' + encodeURIComponent(ref);
+                            }
+                        } catch (err) {}
+                        window.location.href = redirectUrl;
                     }, 600);
                 };
             }
@@ -448,6 +468,64 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                 attributes: true, 
                 attributeFilter: ['style', 'class']
             });
+        })();
+
+        // Referral Capture & Personalization
+        (function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var refParam = urlParams.get('ref');
+
+            if (refParam) {
+                var cleanName = decodeURIComponent(refParam).replace(/_/g, ' ').trim();
+                if (cleanName) {
+                    try {
+                        localStorage.setItem('3x_referral_source', cleanName);
+                    } catch (e) {}
+
+                    var banner = document.getElementById('referralBanner');
+                    var label = document.getElementById('referrerNameLabel');
+                    if (banner && label) {
+                        label.textContent = cleanName;
+                        banner.classList.remove('hidden');
+                    }
+                }
+            } else {
+                try {
+                    var cachedRef = localStorage.getItem('3x_referral_source');
+                    if (cachedRef) {
+                        var banner = document.getElementById('referralBanner');
+                        var label = document.getElementById('referrerNameLabel');
+                        if (banner && label) {
+                            label.textContent = cachedRef;
+                            banner.classList.remove('hidden');
+                        }
+                    }
+                } catch (e) {}
+            }
+
+            // Function to attach referrer to MailerLite form
+            function attachReferrerToForm() {
+                var ref = null;
+                try {
+                    ref = localStorage.getItem('3x_referral_source');
+                } catch (e) {}
+                if (!ref) return;
+
+                var form = document.querySelector('.ml-embedded form');
+                if (form && !form.querySelector('input[name="fields[referred_by]"]')) {
+                    var input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'fields[referred_by]';
+                    input.value = ref;
+                    form.appendChild(input);
+                }
+            }
+
+            var mlTarget = document.querySelector('.ml-embedded');
+            if (mlTarget) {
+                var refObserver = new MutationObserver(attachReferrerToForm);
+                refObserver.observe(mlTarget, { childList: true, subtree: true });
+            }
         })();
 
         // Participant Activity Stream Feed
