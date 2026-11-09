@@ -25,11 +25,25 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1080266224393039');
     fbq('track', 'PageView');
+    fbq('track', 'ViewContent', { content_name: '3X Workshop Qualification Page' });
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+
+    <!-- URL Beautifier: Clean /thank-you in address bar -->
+    <script>
+        (function() {
+            if (window.history && window.history.replaceState) {
+                var path = window.location.pathname;
+                if (path.indexOf('thank-you.html') !== -1) {
+                    var cleanPath = path.replace(/thank-you\.html\/?$/, 'thank-you');
+                    window.history.replaceState(null, '', cleanPath + window.location.search);
+                }
+            }
+        })();
+    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
