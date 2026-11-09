@@ -364,17 +364,16 @@ src="https://www.facebook.com/tr?id=1080266224393039&ev=PageView&noscript=1"
                 sessionStorage.setItem('3x_attendee_email', email);
             } catch (err) {}
 
-            // Track Step 1 progression
+            // Track Step 1 progression without sending any PII
             if (typeof fbq === 'function') {
-                fbq('trackCustom', 'SubmitEmail', { content_name: '3X Workshop Step 1 Email' });
                 fbq('track', 'InitiateCheckout', { content_name: '3X Workshop Reservation' });
             }
 
-            var targetUrl = 'thank-you?email=' + encodeURIComponent(email);
+            var targetUrl = 'thank-you';
             try {
                 var ref = localStorage.getItem('3x_referral_source');
                 if (ref) {
-                    targetUrl += '&ref=' + encodeURIComponent(ref);
+                    targetUrl += '?ref=' + encodeURIComponent(ref);
                 }
             } catch (e) {}
 
