@@ -155,7 +155,7 @@
 
                 <!-- Primary WhatsApp CTA Button -->
                 <div class="text-center pt-1">
-                    <a id="joinWhatsAppCta" href="https://chat.whatsapp.com/KKbKh1DcTtPL4jRPXfKEhb?s=cl&p=a&mlu=4&ilr=4" onclick="handleWhatsAppClick(event)" class="w-full min-h-[64px] sm:min-h-[70px] bg-waBrandGreen hover:bg-waBrandDark text-white font-black text-sm sm:text-base md:text-lg tracking-wide rounded-xl shadow-lg shadow-emerald-600/30 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 px-4 py-3.5 text-center leading-snug">
+                    <a id="joinWhatsAppCta" href="https://chat.whatsapp.com/CknUOulI1vOLqTy8hQ3ScP?mode=gi_t" onclick="handleWhatsAppClick(event)" class="w-full min-h-[64px] sm:min-h-[70px] bg-waBrandGreen hover:bg-waBrandDark text-white font-black text-sm sm:text-base md:text-lg tracking-wide rounded-xl shadow-lg shadow-emerald-600/30 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 px-4 py-3.5 text-center leading-snug">
                         <span>I Confirm That I Am A Course Creator, Coach Or Webinar Host</span>
                         <span class="text-xs sm:text-sm font-extrabold uppercase opacity-95">→ Join WhatsApp</span>
                     </a>
@@ -228,7 +228,7 @@
                 </p>
 
                 <div class="text-center mt-5">
-                    <a href="https://chat.whatsapp.com/KKbKh1DcTtPL4jRPXfKEhb?s=cl&p=a&mlu=4&ilr=4" onclick="handleWhatsAppClick(event)" class="inline-flex items-center gap-2 bg-waBrandGreen hover:bg-waBrandDark text-white font-black text-xs sm:text-sm uppercase tracking-wide px-6 py-3.5 rounded-lg shadow-md transition transform hover:-translate-y-0.5">
+                    <a href="https://chat.whatsapp.com/CknUOulI1vOLqTy8hQ3ScP?mode=gi_t" onclick="handleWhatsAppClick(event)" class="inline-flex items-center gap-2 bg-waBrandGreen hover:bg-waBrandDark text-white font-black text-xs sm:text-sm uppercase tracking-wide px-6 py-3.5 rounded-lg shadow-md transition transform hover:-translate-y-0.5">
                         <span>I Confirm & Claim All 4 Gifts → Enter WhatsApp Room</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
@@ -307,11 +307,12 @@
             }
 
             // 3. Smooth redirect to WhatsApp
-            var targetUrl = 'https://chat.whatsapp.com/KKbKh1DcTtPL4jRPXfKEhb?s=cl&p=a&mlu=4&ilr=4';
+            var targetUrl = (e.currentTarget && e.currentTarget.href) ? e.currentTarget.href : 'https://chat.whatsapp.com/CknUOulI1vOLqTy8hQ3ScP?mode=gi_t';
             try {
                 var ref = localStorage.getItem('3x_referral_source');
                 if (ref) {
-                    targetUrl += '&ref=' + encodeURIComponent(ref);
+                    var separator = targetUrl.indexOf('?') >= 0 ? '&' : '?';
+                    targetUrl += separator + 'ref=' + encodeURIComponent(ref);
                 }
             } catch (err) {}
 
